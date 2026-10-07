@@ -187,7 +187,7 @@ export const DataLabDemo: React.FC = () => {
           <Info className="w-3.5 h-3.5 text-sky-400" />
           Radar produit un signal statistique descriptif explicable — aucun jugement de valeur ni causalité hâtive.
         </span>
-        <span className="font-mono text-slate-400">DuckDB Execution: ~18ms</span>
+        <span className="font-mono text-slate-400">Moteur In-Memory DuckDB</span>
       </div>
     </div>
   );

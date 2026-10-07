@@ -43,7 +43,7 @@ export const SKILL_DOMAINS: SkillDomain[] = [
     badge: 'Zero-Cloud-Bill',
     description: 'Pipelines analytiques locaux ultra-rapides sur jeux de données massifs sans base de données facturée.',
     items: [
-      { name: 'DuckDB & Apache Parquet', level: 'Production', detail: 'Requêtage analytique colonnaire en mémoire < 50ms sur des millions d\'enregistrements' },
+      { name: 'DuckDB & Apache Parquet', level: 'Production', detail: 'Requêtage analytique colonnaire en mémoire sur des volumes massifs d\'enregistrements' },
       { name: 'Statistiques Explicables', level: 'Production', detail: 'Détection d\'anomalies et décomposition YoY sans fausses allégations de causalité' },
       { name: 'ETL & Ingestion Open Data', level: 'Production', detail: 'Normalisation automatique des flux Open Data (Enedis, BOAMP, TED)' }
     ]

@@ -22,7 +22,7 @@ Démontrer auprès d'interlocuteurs et directeurs techniques une capacité épro
 
 1. **WorkForce Optimize AI** — Cartographie organisationnelle ETI, audit de tâches et arbitrage Humain / Copilot / Agent (Cas Novalis Industries, 2 400 salariés).
 2. **Éditions Larivière AI Studio** — Studio de génération publicitaire multiformat avec charte de marque déterministe et sas de chargement mémoire sécurisé (`Lariviere-Live`).
-3. **DataLab Enedis** — Moteur analytique territorial haute performance sur l'Open Data Enedis (DuckDB & Parquet en mémoire, <50ms de latence).
+3. **DataLab Enedis** — Moteur analytique territorial sur l'Open Data Enedis (DuckDB & Parquet en mémoire).
 4. **ECS Signal-to-Deal** — Veille d'appels d'offres publics audiovisuels & IT, scoring et preuve formelle de titulaire sortant (Pilote Zcube × Evernex Capital Solutions).
 5. **GeminiUsageMonitor & Dashboard** — Microservice FinOps zero-knowledge calculant au millième de centime le coût des tokens Gemini en temps réel.
 6. **Jarvis** — Assistant local vocal Windows et mobile avec bac à sable d'actions et confirmation humaine obligatoire.
@@ -35,7 +35,7 @@ Consultez l'audit complet dans [`docs/PROJECT_INVENTORY.md`](docs/PROJECT_INVENT
 ## 3. Architecture du Portfolio
 
 - **Framework** : React 18, TypeScript, Tailwind CSS, Lucide Icons.
-- **Bundler** : Vite 6 (build statique ultra-léger ~280 kB gzip, chargement instantané).
+- **Bundler** : Vite 6 (build statique optimisé ~82 kB gzip, chargement rapide).
 - **Routage** : Routage côté client compatible GitHub Pages et hébergement statique sans réécriture serveur.
 - **Fonctionnalité "Dual View"** :
   - **Mode Produit** : focalisé sur la valeur métier, les parcours utilisateurs et les captures d'écran réelles.

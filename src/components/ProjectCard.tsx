@@ -127,13 +127,28 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, onSelect, onO
           <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
         </button>
 
-        {project.hasLiveDemo && (
+        {project.demoType === 'REAL LIVE APP' ? (
+          <button
+            onClick={() => onSelect(project.id)}
+            className="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg text-xs font-medium bg-emerald-500/10 text-emerald-300 hover:bg-emerald-500/20 border border-emerald-500/30 transition-colors"
+          >
+            <Play className="w-3 h-3 fill-current" />
+            <span>Launch Live App</span>
+          </button>
+        ) : project.demoType === 'INTERACTIVE PORTFOLIO DEMO' ? (
           <button
             onClick={() => onSelect(project.id)}
             className="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg text-xs font-medium bg-sky-500/10 text-sky-300 hover:bg-sky-500/20 border border-sky-500/30 transition-colors"
           >
             <Play className="w-3 h-3 fill-current" />
-            <span>Tester en Live</span>
+            <span>Interactive Demo</span>
+          </button>
+        ) : (
+          <button
+            onClick={() => onSelect(project.id)}
+            className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-xs font-medium bg-slate-800/80 text-slate-400 hover:text-slate-200 border border-slate-700/60 transition-colors"
+          >
+            <span>Case Study</span>
           </button>
         )}
       </div>

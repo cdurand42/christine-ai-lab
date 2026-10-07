@@ -48,4 +48,12 @@ describe('Christine AI Lab Data Integrity', () => {
     expect(domainIds).toContain('security-qa');
     expect(domainIds).toContain('product-ux');
   });
+
+  it('should have honest demoType and audited status on all projects', () => {
+    for (const project of PROJECTS) {
+      expect(['REAL LIVE APP', 'INTERACTIVE PORTFOLIO DEMO', 'CASE STUDY ONLY']).toContain(project.demoType);
+      // No project should be marked LIVE unless unauthenticated public live URL is verified
+      expect(['PILOT', 'PROTOTYPE', 'BETA']).toContain(project.status);
+    }
+  });
 });

@@ -6,15 +6,15 @@ Ce document recense l'ensemble des dépôts et projets réels identifiés sur l'
 
 ## 1. Projets Phares Intégrés au Portfolio
 
-| Projet | Dépôt Local | Statut | Stack Clé | Visibilité GitHub | Démo Live / Simulateur |
+| Projet | Dépôt Local | Statut Audité | Classification Démo | Stack Clé | Visibilité GitHub |
 |---|---|---|---|---|---|
-| **WorkForce Optimize AI** | `D:\WorkForceAI` | `PILOT` | Python 3.12, Streamlit, Pydantic v2, Ruff, Pytest, Playwright | `Private Enterprise` | Simulateur WorkScan intégré + Local Runner |
-| **Éditions Larivière AI Studio** | `D:\LariviereAI` & `D:\Lariviere-Live` | `LIVE` | Python, Streamlit, Gemini Multimodal, Pillow (Lanczos), PBKDF2 | `Public Gateway` (`Lariviere-Live`) + `Private Core` | Portail Streamlit Cloud + Inspecteur de formats intégré |
-| **DataLab Enedis** | `D:\DataLab-Enedis` & `D:\DataLab-Live` | `LIVE` | Python 3.12, DuckDB, Apache Parquet, Streamlit, FastAPI | `Public Gateway` (`DataLab-Live`) + `Private Core` | Portail Streamlit Cloud + Explorateur Bench/Radar intégré |
-| **ECS Signal-to-Deal** | `D:\ECS-Signal-to-Deal` | `PILOT` | Python 3.12, Streamlit, Playwright, Pytest, Loop Policy Windows | `Proprietary Pilot` (Privé) | Simulateur Radar & Avis d'Attribution intégré |
-| **GeminiUsageMonitor & Dashboard** | `D:\GeminiUsageMonitor` & `D:\GeminiUsageDashboard` | `LIVE` | FastAPI, SQLAlchemy 2.0, Alembic, Streamlit, Python Decimal | `Public Gateway` (`GeminiUsageDashboard`) + `Private Backend` | Dashboard Streamlit + Calculateur FinOps intégré |
-| **Jarvis — Assistant Local** | `D:\Jarvis` | `PROTOTYPE` | Python 3.10+, Gemini 2.5 Flash, FastAPI, WebSockets, SQLite, PWA | `Proprietary Prototype` (Privé) | Simulateur de bac à sable d'actions intégré |
-| **Zcube Enedis Pilot** | `D:\Zcube-Enedis-Pilot` | `PILOT` | Python, Streamlit, Gemini, python-pptx, Usage Monitor Client | `Proprietary Pilot` (Privé) | Étude de cas & Cadrage de scénarios |
+| **WorkForce Optimize AI** | `D:\WorkForceAI` | `PILOT` | **B. INTERACTIVE PORTFOLIO DEMO** | Python 3.12, Streamlit, Pydantic v2, Ruff, Pytest, Playwright | `Private Enterprise` |
+| **Éditions Larivière AI Studio** | `D:\LariviereAI` & `D:\Lariviere-Live` | `PILOT` | **B. INTERACTIVE PORTFOLIO DEMO** | Python, Streamlit, Gemini Vision, Pillow (Lanczos), PBKDF2 | `Public Gateway` (`Lariviere-Live`) + `Private Core` |
+| **DataLab Enedis** | `D:\DataLab-Enedis` & `D:\DataLab-Live` | `PILOT` | **B. INTERACTIVE PORTFOLIO DEMO** | Python 3.12, DuckDB, Apache Parquet, Streamlit, FastAPI | `Public Gateway` (`DataLab-Live`) + `Private Core` |
+| **ECS Signal-to-Deal** | `D:\ECS-Signal-to-Deal` | `PILOT` | **B. INTERACTIVE PORTFOLIO DEMO** | Python 3.12, Streamlit, Playwright, Pytest, Loop Policy Windows | `Proprietary Pilot` (Privé) |
+| **GeminiUsageMonitor & Dashboard** | `D:\GeminiUsageMonitor` & `D:\GeminiUsageDashboard` | `PILOT` | **B. INTERACTIVE PORTFOLIO DEMO** | FastAPI, SQLAlchemy 2.0, Alembic, Streamlit, Python Decimal | `Public Gateway` (`GeminiUsageDashboard`) + `Private Backend` |
+| **Jarvis — Assistant Local** | `D:\Jarvis` | `PROTOTYPE` | **B. INTERACTIVE PORTFOLIO DEMO** | Python 3.10+, Gemini 2.5 Flash, FastAPI, WebSockets, SQLite, PWA | `Proprietary Prototype` (Privé) |
+| **Zcube Enedis Pilot** | `D:\Zcube-Enedis-Pilot` | `PILOT` | **C. CASE STUDY ONLY** | Python, Streamlit, Gemini, python-pptx, Usage Monitor Client | `Proprietary Pilot` (Privé) |
 
 ---
 

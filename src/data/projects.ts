@@ -61,9 +61,10 @@ export const PROJECTS: ProjectData[] = [
       ],
       dataPrivacy: 'Aucune donnée RH ou industrielle interne n\'est transmise à un serveur tiers.'
     },
+    demoType: 'INTERACTIVE PORTFOLIO DEMO',
     hasLiveDemo: true,
     interactiveDemoId: 'workforce-matrix',
-    liveDemoLabel: 'Lancer l\'application (Local / Pilot)',
+    liveDemoLabel: 'Interactive Portfolio Demo',
     repoVisibility: 'Private Enterprise',
     repoUrl: 'https://github.com/cdurand42/WorkForceAI',
     assets: [
@@ -105,7 +106,7 @@ export const PROJECTS: ProjectData[] = [
     name: 'Éditions Larivière AI Studio',
     baseline: 'Génération publicitaire multiformat avec charte de marque déterministe et sas d\'accès sécurisé',
     category: 'Multimodal AI & Creative Automation',
-    status: 'LIVE',
+    status: 'PILOT',
     featured: true,
     order: 2,
     problem: 'Créer manuellement des kits publicitaires complets pour des événements de référence (Game Fair, Bol d\'Or) demande des jours de déclinaisons graphiques (Feed carré 1080×1080, Story/Reel 1080×1920, carrousels). Les modèles d\'IA générative classiques déforment les logos vectoriels et hallucinent la typographie officielle.',
@@ -160,10 +161,10 @@ export const PROJECTS: ProjectData[] = [
       ],
       dataPrivacy: 'Aucune donnée confidentielle ou briefing privé n\'est indexé ou rendu public.'
     },
+    demoType: 'INTERACTIVE PORTFOLIO DEMO',
     hasLiveDemo: true,
-    liveDemoUrl: 'https://github.com/cdurand42/Lariviere-Live',
-    liveDemoLabel: 'Voir le portail Live (Lariviere-Live)',
     interactiveDemoId: 'lariviere-studio',
+    liveDemoLabel: 'Interactive Portfolio Demo',
     repoVisibility: 'Public Gateway',
     repoUrl: 'https://github.com/cdurand42/Lariviere-Live',
     assets: [
@@ -188,14 +189,14 @@ export const PROJECTS: ProjectData[] = [
   {
     id: 'datalab-enedis',
     name: 'DataLab Enedis',
-    baseline: 'Moteur analytique territorial haute performance sur l\'Open Data Enedis (DuckDB & Parquet)',
+    baseline: 'Moteur analytique territorial sur l\'Open Data Enedis (DuckDB & Parquet)',
     category: 'Data & Decision Systems',
-    status: 'LIVE',
+    status: 'PILOT',
     featured: true,
     order: 3,
     problem: 'L\'Open Data électrique national couvre des dizaines de milliers de communes et des millions de lignes de consommation. Croiser ces volumes, comparer des territoires homogènes et décomposer les variations annuelles par secteur (résidentiel, tertiaire, industriel, agricole) sature les tableurs et entraîne habituellement des coûts d\'infrastructure cloud élevés.',
-    solution: 'Un toolkit analytique en Python pur sans aucune base de données payante : ingestion et normalisation des flux Open Data Enedis en fichiers colonnaires Apache Parquet, moteur de requêtes DuckDB ultra-rapide (<50ms), radar d\'anomalies statistiques explicables et portail web de visualisation.',
-    impact: 'Temps de réponse instantané sur la France entière, zéro coût d\'infrastructure cloud et transparence statistique totale sans fausse prétention de causalité.',
+    solution: 'Un toolkit analytique en Python pur sans aucune base de données payante : ingestion et normalisation des flux Open Data Enedis en fichiers colonnaires Apache Parquet, moteur de requêtes DuckDB en mémoire, radar d\'anomalies statistiques explicables et portail web de visualisation.',
+    impact: 'Exécution analytique instantanée sur la France entière, zéro coût d\'infrastructure cloud et transparence statistique totale sans fausse prétention de causalité.',
     stack: ['Python 3.12', 'DuckDB', 'Apache Parquet', 'Streamlit', 'FastAPI', 'Pandas / NumPy', 'Pytest'],
     architecture: {
       overview: 'Pipeline de données colonnaire local à 5 modules indépendants, complété par un portail public (DataLab-Live) sécurisé consommant l\'API via un jeton X-DataLab-Token côté serveur.',
@@ -204,7 +205,7 @@ export const PROJECTS: ProjectData[] = [
         { step: 'Bench Module', detail: 'Agrégation et comparaison multi-critères des communes par secteur et profil' },
         { step: 'Radar Déviations', detail: 'Calcul d\'écarts statistiques sectoriels normalisés pour détecter les profils atypiques' },
         { step: 'Watch Décomposition', detail: 'Analyse comparative N vs N-1 avec décomposition de la variation par secteur d\'activité' },
-        { step: 'Explorer & API Live', detail: 'Interface interactive Streamlit et API FastAPI pour requêtage temps réel' }
+        { step: 'Explorer & API Live', detail: 'Interface interactive Streamlit et API FastAPI pour requêtage' }
       ]
     },
     whatIBuilt: [
@@ -221,7 +222,7 @@ export const PROJECTS: ProjectData[] = [
     decisions: [
       {
         decision: 'Format de stockage colonnaire Parquet + DuckDB en mémoire',
-        rationale: 'Permet de filtrer et d\'agréger 35 000 communes en quelques millisecondes sur un simple processeur portable sans aucun serveur SQL dédié.',
+        rationale: 'Permet de filtrer et d\'agréger 35 000 communes rapidement sur un processeur standard sans serveur SQL dédié.',
         alternativeConsidered: 'PostgreSQL avec extension TimescaleDB (trop lourd à installer, coût d\'hébergement cloud mensuel inutile).'
       },
       {
@@ -243,10 +244,10 @@ export const PROJECTS: ProjectData[] = [
       ],
       dataPrivacy: 'Données strictement issues des flux publics de distribution Enedis.'
     },
+    demoType: 'INTERACTIVE PORTFOLIO DEMO',
     hasLiveDemo: true,
-    liveDemoUrl: 'https://github.com/cdurand42/DataLab-Live',
-    liveDemoLabel: 'Explorer le portail DataLab-Live',
     interactiveDemoId: 'datalab-bench',
+    liveDemoLabel: 'Interactive Portfolio Demo',
     repoVisibility: 'Public Gateway',
     repoUrl: 'https://github.com/cdurand42/DataLab-Live',
     assets: [
@@ -268,7 +269,7 @@ export const PROJECTS: ProjectData[] = [
     order: 4,
     problem: 'Dans le financement d\'équipements IT et audiovisuels pour les grands comptes et collectivités, les opportunités d\'appels d\'offres publics sont dispersées (BOAMP, TED, APProch). Les commerciaux perdent des heures à éplucher des avis, sans savoir qui détenait le marché historique ni si des montants ont été rendus publics.',
     solution: 'Un système d\'intelligence commerciale développé dans le cadre du pilote ZCube Technologies × Evernex Capital Solutions. Il collecte en temps réel les avis publics, calcule un score de pertinence audiovisuelle avec explicitation des critères, recherche les avis d\'attribution historiques pour identifier le titulaire en place, et génère des dossiers d\'enquête vérifiables.',
-    impact: 'Détection en 7 minutes des avis clés (ex: Grand Annecy BOAMP:26-96602, HEC Paris BOAMP:26-38299) avec traçabilité intégrale de la preuve source.',
+    impact: 'Détection ciblée des avis clés (ex: Grand Annecy BOAMP:26-96602, HEC Paris BOAMP:26-38299) avec traçabilité intégrale de la preuve source.',
     stack: ['Python 3.12', 'Streamlit', 'Playwright (E2E)', 'Ruff', 'Pytest', 'Windows Async Loop Policy'],
     architecture: {
       overview: 'Architecture factuelle stricte : l\'interface distingue formellement les faits issus des sources publiques de l\'interprétation de pertinence calculée par le système.',
@@ -315,9 +316,10 @@ export const PROJECTS: ProjectData[] = [
       ],
       dataPrivacy: 'Données strictement limitées aux avis d\'appels d\'offres publiés officiellement par l\'État et les collectivités.'
     },
+    demoType: 'INTERACTIVE PORTFOLIO DEMO',
     hasLiveDemo: true,
     interactiveDemoId: 'ecs-radar',
-    liveDemoLabel: 'Lancer le Radar d\'avis publics',
+    liveDemoLabel: 'Interactive Portfolio Demo',
     repoVisibility: 'Proprietary Pilot',
     repoUrl: 'https://github.com/cdurand42/ecs-signal-to-deal',
     assets: [
@@ -334,7 +336,7 @@ export const PROJECTS: ProjectData[] = [
     name: 'GeminiUsageMonitor & Dashboard',
     baseline: 'Microservice FinOps zero-knowledge & tableau de bord de télémétrie de tokens en temps réel',
     category: 'Developer Tools & FinOps',
-    status: 'LIVE',
+    status: 'PILOT',
     featured: true,
     order: 5,
     problem: 'Lorsqu\'une équipe fait tourner plusieurs prototypes et produits basés sur l\'API Google Gemini (Lariviere, Enedis, Jarvis, etc.), il devient très difficile de savoir quel projet consomme quels tokens, de calculer le coût réel des appels multimodaux (texte, images, audio) et d\'alerter sur les dépassements de budget sans risquer d\'exposer la clé API secrète.',
@@ -387,9 +389,10 @@ export const PROJECTS: ProjectData[] = [
       ],
       dataPrivacy: 'Aucun contenu de prompt ni de réponse textuelle n\'est enregistré : uniquement les compteurs de tokens.'
     },
+    demoType: 'INTERACTIVE PORTFOLIO DEMO',
     hasLiveDemo: true,
     interactiveDemoId: 'finops-calculator',
-    liveDemoLabel: 'Calculateur FinOps interactif',
+    liveDemoLabel: 'Interactive Portfolio Demo',
     repoVisibility: 'Public Gateway',
     repoUrl: 'https://github.com/cdurand42/GeminiUsageDashboard',
     assets: [
@@ -459,9 +462,10 @@ export const PROJECTS: ProjectData[] = [
       ],
       dataPrivacy: 'Données d\'historique stockées localement sur le disque de la machine.'
     },
+    demoType: 'INTERACTIVE PORTFOLIO DEMO',
     hasLiveDemo: true,
     interactiveDemoId: 'jarvis-sandbox',
-    liveDemoLabel: 'Tester le simulateur de sandbox',
+    liveDemoLabel: 'Interactive Portfolio Demo',
     repoVisibility: 'Proprietary Pilot',
     repoUrl: 'https://github.com/cdurand42/jarvis',
     assets: [
@@ -483,7 +487,7 @@ export const PROJECTS: ProjectData[] = [
     order: 7,
     problem: 'Dans le cadre d\'études de cadrage pour des projets de distribution électrique régionale, la synthèse des contextes territoriaux en livrables exécutifs PowerPoint demande un temps considérable et une rigueur de mise en page constante.',
     solution: 'Un pilote d\'intelligence territoriale intégrant des scénarios de cadrage d\'opportunités, la synthèse d\'éléments de contexte territorial Enedis et la génération automatisée de présentations PowerPoint professionnelles via python-pptx, avec suivi de la consommation de tokens par GeminiUsageMonitor.',
-    impact: 'Génération en quelques secondes d\'un support de cadrage complet intégrant les données territoriales et les orientations stratégiques.',
+    impact: 'Génération structurée d\'un support de cadrage complet intégrant les données territoriales et les orientations stratégiques.',
     stack: ['Python', 'Streamlit', 'Google Gemini', 'python-pptx', 'GeminiUsageMonitor Client', 'Pytest'],
     architecture: {
       overview: 'Pipeline d\'aide au cadrage : recueil des paramètres de scénario, enrichissement par contexte territorial en cache, génération de brief exécutif et compilation vers template PowerPoint.',
@@ -522,8 +526,9 @@ export const PROJECTS: ProjectData[] = [
       ],
       dataPrivacy: 'Utilisation de contextes de cadrage sans données industrielles sensibles.'
     },
+    demoType: 'CASE STUDY ONLY',
     hasLiveDemo: false,
-    liveDemoLabel: 'Étude de cas technique',
+    liveDemoLabel: 'Case Study Only',
     repoVisibility: 'Proprietary Pilot',
     repoUrl: 'https://github.com/cdurand42/Zcube-Enedis-Pilot',
     assets: [

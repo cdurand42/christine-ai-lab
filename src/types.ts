@@ -65,6 +65,7 @@ export interface ProjectData {
   };
   
   // Links & Demo
+  demoType: 'REAL LIVE APP' | 'INTERACTIVE PORTFOLIO DEMO' | 'CASE STUDY ONLY';
   hasLiveDemo: boolean;
   liveDemoUrl?: string;
   liveDemoLabel?: string;
