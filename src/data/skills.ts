@@ -40,7 +40,7 @@ export const SKILL_DOMAINS: SkillDomain[] = [
     id: 'data-analytics',
     title: 'Data & Decision Systems',
     icon: 'Database',
-    badge: 'Zero-Cloud-Bill',
+    badge: 'Cost-Optimized',
     description: 'Pipelines analytiques locaux ultra-rapides sur jeux de données massifs sans base de données facturée.',
     items: [
       { name: 'DuckDB & Apache Parquet', level: 'Production', detail: 'Requêtage analytique colonnaire en mémoire sur des volumes massifs d\'enregistrements' },
@@ -65,9 +65,9 @@ export const SKILL_DOMAINS: SkillDomain[] = [
     title: 'Product Engineering & Delivery',
     icon: 'Layout',
     badge: 'Fast Delivery',
-    description: 'Capacité à transformer un problème métier complexe en un produit utilisable et déployé en un temps record.',
+    description: 'Capacité à transformer un problème métier complexe en un produit utilisable et démontré avec méthode.',
     items: [
-      { name: 'Prototypage & Interfaces Live', level: 'Production', detail: 'Streamlit pour cadrages exécutifs, applications web réactives React/Tailwind' },
+      { name: 'Prototypage & Démonstrateurs', level: 'Production', detail: 'Streamlit pour cadrages exécutifs, applications web réactives React/Tailwind' },
       { name: 'Compréhension Métier Immédiate', level: 'Production', detail: 'Industrie, énergie, édition, financement d\'actifs IT' },
       { name: 'Déploiement Économique', level: 'Production', detail: 'Déploiements sans frais fixes (GitHub Pages, Streamlit Cloud, Railway free)' }
     ]

@@ -15,7 +15,7 @@ export const PROJECTS: ProjectData[] = [
     stack: ['Python 3.12', 'Streamlit', 'Pydantic v2', 'Ruff', 'Pytest', 'Playwright', 'Gitleaks'],
     models: ['WorkScan Dynamic V1', 'LLM Provider WorkScan autonome (optionnel)'],
     architecture: {
-      overview: 'Architecture modulaire déterministe par défaut avec injection de dépendances, garantie sans base de données externe et sans secrets obligatoires pour un lancement immédiat.',
+      overview: 'Architecture modulaire déterministe par défaut avec injection de dépendances, conçue sans base de données externe et sans secrets obligatoires pour une exécution immédiate.',
       flow: [
         { step: 'Accueil & Portefeuille', detail: 'Sélection du cabinet et de l\'entreprise cible (Novalis Industries)' },
         { step: 'Dashboard Exécutif', detail: 'Vue synthétique des sites, effectifs analysés (135 techniciens) et tension RH' },
@@ -34,12 +34,12 @@ export const PROJECTS: ProjectData[] = [
     ],
     whatILearned: [
       'Les directeurs d\'usines et DRH rejettent les préconisations IA boîte noire ; chaque attribution d\'agent doit expliciter le niveau de supervision humaine nécessaire.',
-      'Un mode déterministe local sans aucun secret externe est la clé pour une adoption sereine et une démo 100% fiable en comité de direction.'
+      'Un mode déterministe local sans aucun secret externe est la clé pour une adoption sereine et une démonstration reproductible et fiable en comité de direction.'
     ],
     decisions: [
       {
         decision: 'Moteur local déterministe par défaut avec provider IA optionnel',
-        rationale: 'Permet une démo instantanée hors-ligne sans risque de panne réseau, de latence de token ou de fuite de données industrielles.',
+        rationale: 'Permet une démonstration hors-ligne sans dépendance réseau, latence d\'API ou risque d\'exposition de données industrielles.',
         alternativeConsidered: 'Appel API obligatoire vers un LLM distant pour chaque calcul de tâche.'
       },
       {
@@ -55,7 +55,7 @@ export const PROJECTS: ProjectData[] = [
     },
     security: {
       highlights: [
-        'Zéro secret requis : aucun identifiant ni clé externe n\'est nécessaire pour exécuter la démo complète',
+        'Fonctionnement sans secret requis : aucun identifiant ni clé externe n\'est nécessaire pour exécuter la démo complète',
         'Contrôle automatique anti-secrets via Gitleaks en pré-commit',
         'Données industrielles strictement anonymisées / fictives (Novalis Industries)'
       ],
@@ -97,7 +97,7 @@ export const PROJECTS: ProjectData[] = [
       {
         type: 'image',
         url: './assets/workforce/07_agentdeploy_asterion_mobile.png',
-        caption: 'AgentDeploy Mobile — Interface 100% utilisable sur écran 390px'
+        caption: 'AgentDeploy Mobile — Interface responsive validée sur écran 390px'
       }
     ]
   },
@@ -111,7 +111,7 @@ export const PROJECTS: ProjectData[] = [
     order: 2,
     problem: 'Créer manuellement des kits publicitaires complets pour des événements de référence (Game Fair, Bol d\'Or) demande des jours de déclinaisons graphiques (Feed carré 1080×1080, Story/Reel 1080×1920, carrousels). Les modèles d\'IA générative classiques déforment les logos vectoriels et hallucinent la typographie officielle.',
     solution: 'Un studio créatif multimodal combinant la puissance générative de Google Gemini Multimodal pour les visuels d\'ambiance et un moteur déterministe Pillow pour l\'incrustation exacte des logos officiels par redimensionnement Lanczos, détection de contraste local (logo blanc ou noir) et zone d\'exclusion sanctuarisée. L\'accès public est protégé par un sas PBKDF2 avec chargeur dynamique du code privé.',
-    impact: 'Génération instantanée de packs publicitaires prêts à diffuser avec 100% de fidélité à la marque et zéro risque de logo déformé.',
+    impact: 'Génération rapide de packs publicitaires prêts à diffuser avec application déterministe des assets de marque, évitant de confier le rendu du logo au modèle génératif.',
     stack: ['Python', 'Streamlit', 'Google Gemini Multimodal', 'Pillow (PIL)', 'PBKDF2-HMAC-SHA256', 'python-pptx', 'Pytest'],
     models: ['Google Gemini Multimodal (Vision)', 'Visual Quality Judge (Audit read-only)'],
     architecture: {
@@ -134,7 +134,7 @@ export const PROJECTS: ProjectData[] = [
     ],
     whatILearned: [
       'Ne jamais déléguer le rendu d\'un logo ou d\'une marque au modèle d\'IA générative : le modèle doit créer l\'ambiance, et le code déterministe (PIL) doit appliquer la charte.',
-      'Un sas d\'authentification à dérivation forte couplé à un chargeur dynamique en mémoire permet d\'héberger des démonstrations privées de manière totalement gratuite et sécurisée.'
+      'Un sas d\'authentification à dérivation forte couplé à un chargeur dynamique en mémoire permet d\'héberger des démonstrations privées sans coût d\'infrastructure supplémentaire, avec contrôle d\'accès.'
     ],
     decisions: [
       {
@@ -144,7 +144,7 @@ export const PROJECTS: ProjectData[] = [
       },
       {
         decision: 'Rendu déterministe du logo par PIL plutôt que génération par le prompt',
-        rationale: 'Garantit à 100% l\'intégrité des proportions, de la typographie et de la netteté du logo Game Fair officiel.',
+        rationale: 'Préserve rigoureusement l\'intégrité des proportions, de la typographie et de la netteté du logo Game Fair officiel via traitement d\'image direct.',
         alternativeConsidered: 'Fournir le logo en image de référence au modèle génératif (résultait en logos déformés ou mal orthographiés).'
       }
     ],
@@ -156,7 +156,7 @@ export const PROJECTS: ProjectData[] = [
     security: {
       highlights: [
         'Sas PBKDF2-HMAC-SHA256 avec comparaison en temps constant (`hmac.compare_digest`)',
-        'Fail-closed absolu : aucun appel API externe n\'est émis avant authentification valide',
+        'Architecture fail-closed : aucun appel API externe n\'est émis avant authentification valide',
         'Token GitHub transporté exclusivement via en-tête Authorization HTTPS'
       ],
       dataPrivacy: 'Aucune donnée confidentielle ou briefing privé n\'est indexé ou rendu public.'
@@ -196,7 +196,7 @@ export const PROJECTS: ProjectData[] = [
     order: 3,
     problem: 'L\'Open Data électrique national couvre des dizaines de milliers de communes et des millions de lignes de consommation. Croiser ces volumes, comparer des territoires homogènes et décomposer les variations annuelles par secteur (résidentiel, tertiaire, industriel, agricole) sature les tableurs et entraîne habituellement des coûts d\'infrastructure cloud élevés.',
     solution: 'Un toolkit analytique en Python pur sans aucune base de données payante : ingestion et normalisation des flux Open Data Enedis en fichiers colonnaires Apache Parquet, moteur de requêtes DuckDB en mémoire, radar d\'anomalies statistiques explicables et portail web de visualisation.',
-    impact: 'Exécution analytique instantanée sur la France entière, zéro coût d\'infrastructure cloud et transparence statistique totale sans fausse prétention de causalité.',
+    impact: 'Exécution analytique sub-seconde sur la France entière, sans coût d\'infrastructure cloud dédié et avec une traçabilité statistique sans prétention de causalité.',
     stack: ['Python 3.12', 'DuckDB', 'Apache Parquet', 'Streamlit', 'FastAPI', 'Pandas / NumPy', 'Pytest'],
     architecture: {
       overview: 'Pipeline de données colonnaire local à 5 modules indépendants, complété par un portail public (DataLab-Live) sécurisé consommant l\'API via un jeton X-DataLab-Token côté serveur.',
@@ -216,7 +216,7 @@ export const PROJECTS: ProjectData[] = [
       'Panel analytique équilibré permettant des comparaisons territorialement pertinentes'
     ],
     whatILearned: [
-      'DuckDB couplé au format Parquet enterre les bases de données relationnelles traditionnelles (Postgres/MySQL) pour l\'analytique en lecture seule, tout en supprimant 100% des coûts d\'hébergement de base de données.',
+      'DuckDB couplé au format Parquet surpasse les bases relationnelles traditionnelles pour l\'analytique locale en lecture seule, en éliminant les coûts d\'hébergement de base de données managée.',
       'En matière d\'analytics territorial, l\'explicabilité est non négociable : le système doit décrire des faits statistiques et refuser d\'imputer arbitrairement des causes d\'inefficacité énergétique.'
     ],
     decisions: [
@@ -238,7 +238,7 @@ export const PROJECTS: ProjectData[] = [
     },
     security: {
       highlights: [
-        'Open Data 100% public : aucune donnée privée ou nominative de compteur',
+        'Données issues de l\'Open Data public Enedis : aucune donnée privée ou nominative de compteur',
         'Frontend public-safe isolant les algorithmes internes via un jeton d\'API X-DataLab-Token côté serveur',
         'Documentation OpenAPI et Swagger désactivées en production pour réduire la surface d\'attaque'
       ],
@@ -293,8 +293,8 @@ export const PROJECTS: ProjectData[] = [
     ],
     decisions: [
       {
-        decision: 'Données publiques réelles exclusives (zéro donnée commerciale inventée)',
-        rationale: 'Garantit l\'éthique de la prospection et la conformité légale totale envers les acheteurs publics et Evernex.',
+        decision: 'Données publiques réelles exclusives (absence d\'extrapolation commerciale)',
+        rationale: 'Assure la conformité légale et la traçabilité des sources envers les acheteurs publics et Evernex.',
         alternativeConsidered: 'Génération de contacts ou de montants probables par un modèle de langage (rejeté catégoriquement).'
       },
       {
@@ -310,8 +310,8 @@ export const PROJECTS: ProjectData[] = [
     },
     security: {
       highlights: [
-        'Zéro accès aux systèmes CRM ou bases internes d\'Evernex : isolation totale',
-        'Zéro stockage de données nominatives non publiques',
+        'Aucun accès aux systèmes CRM ou bases internes d\'Evernex : isolation complète',
+        'Aucun stockage de données nominatives non publiques',
         'Cache local de session de 30 minutes sans persistance non sollicitée'
       ],
       dataPrivacy: 'Données strictement limitées aux avis d\'appels d\'offres publiés officiellement par l\'État et les collectivités.'
@@ -341,7 +341,7 @@ export const PROJECTS: ProjectData[] = [
     order: 5,
     problem: 'Lorsqu\'une équipe fait tourner plusieurs prototypes et produits basés sur l\'API Google Gemini (Lariviere, Enedis, Jarvis, etc.), il devient très difficile de savoir quel projet consomme quels tokens, de calculer le coût réel des appels multimodaux (texte, images, audio) et d\'alerter sur les dépassements de budget sans risquer d\'exposer la clé API secrète.',
     solution: 'Un microservice indépendant haute fiabilité (FastAPI, SQLAlchemy 2.0, Alembic) et un dashboard Streamlit public sécurisé. Il ingère les métadonnées de consommation (compteurs de tokens, nom de modèle, type d\'opération) avec garantie zero-knowledge : la clé API Google Gemini n\'est jamais reçue, ni stockée, ni exposée. Le calcul financier utilise la précision Python Decimal avec des snapshots tarifaires immuables.',
-    impact: 'Surveillance budgétaire au centime près sur l\'ensemble des projets du lab, avec zéro risque de fuite de clé Google.',
+    impact: 'Surveillance budgétaire au centime près sur l\'ensemble des projets du lab, évitant tout risque d\'exposition de clé Google grâce à l\'isolation des flux.',
     stack: ['FastAPI', 'SQLAlchemy 2.0', 'Alembic', 'Pydantic v2', 'Streamlit', 'Python Decimal', 'Pytest'],
     architecture: {
       overview: 'Architecture microservice découplée : API d\'ingestion idempotente déployée sur Railway, base de données SQLite/PostgreSQL versionnée par migrations Alembic, et dashboard Streamlit séparé.',
@@ -362,11 +362,11 @@ export const PROJECTS: ProjectData[] = [
     ],
     whatILearned: [
       'L\'arithmétique en virgule flottante native (`float`) est interdite en FinOps : sur des millions de requêtes, les micro-arrondis créent des écarts financiers significatifs. `Decimal` est obligatoire.',
-      'Un système de télémétrie ne doit jamais recevoir la clé d\'API du fournisseur : isoler la télémétrie des credentials garantit une sécurité hermétique.'
+      'Un système de télémétrie ne doit jamais recevoir la clé d\'API du fournisseur : isoler la télémétrie des identifiants API renforce substantiellement la sécurité opérationnelle.'
     ],
     decisions: [
       {
-        decision: 'Zéro transit de clé d\'API Google vers le monitor',
+        decision: 'Aucun transit de clé d\'API Google vers le moniteur',
         rationale: 'Même si le serveur de monitoring venait à être compromis, aucune clé Gemini ne pourrait être volée.',
         alternativeConsidered: 'Faire passer les appels Google Gemini à travers le monitor comme proxy inverse.'
       },
@@ -383,7 +383,7 @@ export const PROJECTS: ProjectData[] = [
     },
     security: {
       highlights: [
-        'Zéro-knowledge : la clé API Google Gemini n\'est ni demandée ni acceptée',
+        'Architecture Zero-Knowledge : la clé API Google Gemini n\'est ni demandée ni acceptée',
         'Jeton d\'authentification par en-tête `X-Monitor-Token` pour l\'ingestion et `X-Monitor-Read-Token` pour la lecture',
         'Vérification du mot de passe dashboard en temps constant avec `hmac.compare_digest`'
       ],
@@ -457,7 +457,7 @@ export const PROJECTS: ProjectData[] = [
     security: {
       highlights: [
         'Sandbox de sous-processus : liste blanche stricte de commandes autorisées',
-        'Refus absolu de binding sur adresse non-locale sans jeton de sécurité',
+        'Blocage systématique du binding sur adresse non-locale sans jeton de sécurité',
         'Séparation stricte des historiques SQLite par profil'
       ],
       dataPrivacy: 'Données d\'historique stockées localement sur le disque de la machine.'
@@ -521,7 +521,7 @@ export const PROJECTS: ProjectData[] = [
     },
     security: {
       highlights: [
-        'Zéro transmission de clés API Google au moniteur de consommation',
+        'Aucune transmission de clés API Google au moniteur de consommation',
         'Données de proposition et de contexte territorial isolées en cache local'
       ],
       dataPrivacy: 'Utilisation de contextes de cadrage sans données industrielles sensibles.'

@@ -129,7 +129,7 @@ export const ProjectDetailPage: React.FC<ProjectDetailPageProps> = ({ project, o
               <Sparkles className="w-4 h-4 text-sky-400" />
               <h3 className="text-base font-bold text-white">Démonstration Interactive Intégrée</h3>
             </div>
-            <span className="text-[11px] font-mono text-emerald-400">100% exécutable dans le navigateur</span>
+            <span className="text-[11px] font-mono text-emerald-400">Exécutable directement dans le navigateur</span>
           </div>
 
           {renderInteractiveDemo()}

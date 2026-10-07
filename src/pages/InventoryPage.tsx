@@ -15,7 +15,7 @@ export const InventoryPage: React.FC = () => {
       category: 'Enterprise AI & Organization',
       visibility: 'Private Enterprise',
       hasLiveDemo: true,
-      securityNotes: 'Zéro secret requis. Faux client Novalis Industries. Gitleaks actif. Dépôt conservé privé.'
+      securityNotes: 'Aucun secret requis en mode local. Faux client Novalis Industries. Gitleaks actif. Dépôt conservé privé.'
     },
     {
       name: 'Éditions Larivière AI',
@@ -39,7 +39,7 @@ export const InventoryPage: React.FC = () => {
       category: 'Data & Decision Systems',
       visibility: 'Public Gateway + Private Core',
       hasLiveDemo: true,
-      securityNotes: 'Open Data 100% public (Enedis). Frontend public consommant le backend via X-DataLab-Token côté serveur. Swagger/docs désactivés en prod.'
+      securityNotes: 'Open Data public (Enedis). Frontend public consommant le backend via X-DataLab-Token côté serveur. Swagger/docs désactivés en prod.'
     },
     {
       name: 'ECS Signal-to-Deal',
@@ -51,7 +51,7 @@ export const InventoryPage: React.FC = () => {
       category: 'Agentic Intelligence & Public Tenders',
       visibility: 'Proprietary Pilot (Private)',
       hasLiveDemo: true,
-      securityNotes: 'Données BOAMP/TED 100% publiques. Zéro contact inventé, zéro accès CRM Evernex. Dépôt conservé privé.'
+      securityNotes: 'Données BOAMP/TED publiques. Aucun contact inventé, aucun accès CRM Evernex. Dépôt conservé privé.'
     },
     {
       name: 'GeminiUsageMonitor',
@@ -63,7 +63,7 @@ export const InventoryPage: React.FC = () => {
       category: 'Developer Tools & FinOps',
       visibility: 'Public Gateway + Private Service',
       hasLiveDemo: true,
-      securityNotes: 'Zero-knowledge absolu : ne reçoit JAMAIS la clé API Google. Ingestion de compteurs de tokens uniquement. Protection mot de passe hmac constant.'
+      securityNotes: 'Architecture Zero-Knowledge : ne reçoit pas la clé API Google. Ingestion de compteurs de tokens uniquement. Protection mot de passe hmac constant.'
     },
     {
       name: 'Jarvis Local Assistant',
@@ -111,7 +111,7 @@ export const InventoryPage: React.FC = () => {
       <div className="p-4 rounded-xl bg-slate-900/80 border border-emerald-500/30 flex items-start gap-3">
         <Shield className="w-5 h-5 text-emerald-400 flex-shrink-0 mt-0.5" />
         <div className="space-y-1 text-xs">
-          <h4 className="font-semibold text-emerald-300">Règle de publication zéro fuite</h4>
+          <h4 className="font-semibold text-emerald-300">Politique de prévention des fuites</h4>
           <p className="text-slate-300 leading-relaxed">
             Conformément à la charte de sécurité, aucun dépôt propriétaire présentant un risque de divulgation de données d'entreprise ou de clé API n'a été basculé en accès public. Les projets disposant d'une démonstration live utilisent une architecture découplée à sas d'authentification ou un portail public-safe consommant des endpoints protégés.
           </p>

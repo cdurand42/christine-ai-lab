@@ -150,7 +150,7 @@ export const DataLabDemo: React.FC = () => {
       <div className="bg-slate-950/60 p-4 rounded-lg border border-slate-800 my-4">
         <div className="text-xs font-mono uppercase text-slate-400 mb-3 flex items-center justify-between">
           <span>Décomposition Sectorielle de la Consommation :</span>
-          <span className="text-slate-400">100% normalisé</span>
+          <span className="text-slate-400">Total normalisé (100%)</span>
         </div>
 
         {/* Progress Bar */}

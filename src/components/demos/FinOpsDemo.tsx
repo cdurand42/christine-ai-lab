@@ -170,7 +170,7 @@ export const FinOpsDemo: React.FC = () => {
           <div className="p-3 bg-slate-950/60 rounded-lg border border-slate-800 text-[11px] text-slate-400 space-y-1">
             <div className="flex items-center gap-1.5 text-slate-300 font-medium">
               <Shield className="w-3.5 h-3.5 text-emerald-400" />
-              Garantie Zero-Knowledge
+              Architecture Zero-Knowledge
             </div>
             <p>
               Le moniteur n'accepte que les compteurs de tokens. Aucune clé API Google Gemini n'est requise ni transmise.
@@ -182,7 +182,7 @@ export const FinOpsDemo: React.FC = () => {
       <div className="flex items-center justify-between pt-3 border-t border-slate-800/80 text-xs text-slate-400">
         <span className="flex items-center gap-1.5">
           <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
-          Arithmétique Python Decimal stricte : zéro erreur d'arrondi sur les millions d'appels.
+          Arithmétique Python Decimal stricte : élimine les erreurs d'arrondi de la virgule flottante.
         </span>
         <span className="font-mono text-slate-400">API Endpoint: POST /usage</span>
       </div>

@@ -51,7 +51,7 @@ const SAMPLE_ROLES: { [key: string]: { title: string; site: string; count: numbe
         complexity: 'High',
         risk: 'High',
         currentMode: 'Human',
-        supervisionReq: '100% Humain habilité (Habilitation BR/BC)'
+        supervisionReq: 'Exclusivité humaine requise (Habilitation BR/BC)'
       }
     ]
   },

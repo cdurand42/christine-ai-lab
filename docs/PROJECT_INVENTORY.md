@@ -26,14 +26,14 @@ Ce document recense l'ensemble des dépôts et projets réels identifiés sur l'
 ### Détails par projet :
 
 1. **WorkForceAI (`D:\WorkForceAI`)**
-   - **Secrets** : Zéro secret hardcodé requis. Démonstration exécutable à 100% hors-ligne en mode local déterministe.
+   - **Secrets** : Aucun secret hardcodé requis. Démonstration exécutable hors-ligne en mode local déterministe.
    - **Données** : Modélisation canonique sur une ETI industrielle fictive (`Novalis Industries`, ~2 400 salariés).
    - **Décision** : Maintenu en dépôt privé. Démonstration assurée via captures d'écran réelles et simulateur de matrice de tâches intégré au lab.
 
 2. **Éditions Larivière AI (`D:\LariviereAI` & `D:\Lariviere-Live`)**
    - **Secrets** : Aucun secret dans le dépôt public `Lariviere-Live`.
    - **Architecture Sas** : Le portail public Streamlit demande un identifiant/mot de passe haché par PBKDF2-HMAC-SHA256 (600 000 itérations). Le code privé n'est chargé en mémoire conteneur qu'après authentification via l'API GitHub avec en-tête Authorization HTTPS.
-   - **Décision** : Le dépôt public `Lariviere-Live` sert de passerelle d'exécution 100% sécurisée sur Streamlit Community Cloud.
+   - **Décision** : Le dépôt public `Lariviere-Live` sert de passerelle d'exécution avec sas d'accès sur Streamlit Community Cloud.
 
 3. **DataLab Enedis (`D:\DataLab-Enedis` & `D:\DataLab-Live`)**
    - **Secrets** : Aucun secret exposé. Le frontend public `DataLab-Live` communique côté serveur avec le backend privé via `X-DataLab-Token`.
@@ -41,12 +41,12 @@ Ce document recense l'ensemble des dépôts et projets réels identifiés sur l'
    - **Décision** : Dépôt public `DataLab-Live` pour le frontal léger ; moteur analytique DuckDB/Parquet privé.
 
 4. **ECS Signal-to-Deal (`D:\ECS-Signal-to-Deal`)**
-   - **Secrets** : Zéro accès aux systèmes CRM ou bases internes Evernex.
-   - **Données** : 100% avis d'appels d'offres publics légaux (BOAMP, TED, APProch).
+   - **Secrets** : Aucun accès aux systèmes CRM ou bases internes Evernex.
+   - **Données** : Avis d'appels d'offres publics légaux (BOAMP, TED, APProch).
    - **Décision** : Dépôt conservé privé. Reproduction de la démo via le runbook officiel de 7 minutes et simulateur d'avis public dans le lab.
 
 5. **GeminiUsageMonitor (`D:\GeminiUsageMonitor` & `D:\GeminiUsageDashboard`)**
-   - **Secrets** : Garantie Zero-Knowledge. Le microservice n'accepte aucune clé API Google Gemini ; il ingère uniquement les métadonnées de consommation (compteurs de tokens, type de modèle).
+   - **Secrets** : Architecture Zero-Knowledge. Le microservice n'accepte aucune clé API Google Gemini ; il ingère uniquement les métadonnées de consommation (compteurs de tokens, type de modèle).
    - **Décision** : Frontal public `GeminiUsageDashboard` déployable sur Streamlit Cloud avec mot de passe temps constant.
 
 6. **Jarvis (`D:\Jarvis`)**

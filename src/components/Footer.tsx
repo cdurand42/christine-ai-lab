@@ -33,9 +33,9 @@ export const Footer: React.FC = () => {
             <h5 className="font-mono text-xs font-semibold text-slate-200 uppercase tracking-wider">Principes Directeurs</h5>
             <ul className="space-y-1.5 text-[11px] text-slate-400">
               <li>• Produit fonctionnel &gt; Sophistication inutile</li>
-              <li>• Zéro fausse métrique, zéro simulation fictive</li>
-              <li>• Architecture zéro secret &amp; privacy-first</li>
-              <li>• Zéro coût cloud contraint (DuckDB, Parquet)</li>
+              <li>• Données factuelles sans extrapolation fictive</li>
+              <li>• Gestion rigoureuse des secrets &amp; privacy-first</li>
+              <li>• Optimisation des coûts d'infrastructure (DuckDB, Parquet)</li>
               <li>• Validation stricte : tests Pytest &amp; E2E</li>
             </ul>
           </div>
@@ -54,7 +54,7 @@ export const Footer: React.FC = () => {
             © {new Date().getFullYear()} Christine AI Lab. Conçu avec Vite, React 18, TypeScript &amp; Tailwind CSS.
           </div>
           <div className="flex items-center gap-4 font-mono text-[10px]">
-            <span>100% Client-Side Static SSG</span>
+            <span>Client-Side Static SSG</span>
             <span>•</span>
             <span>Zero-Tracker</span>
             <span>•</span>

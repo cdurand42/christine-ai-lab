@@ -189,7 +189,7 @@ export const ECSRadarDemo: React.FC = () => {
       <div className="flex items-center justify-between pt-3 border-t border-slate-800/80 text-xs text-slate-400">
         <span className="flex items-center gap-1.5">
           <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
-          Règle déontologique : 100% données publiques BOAMP/TED. Zéro contact ou donnée privée simulée.
+          Règle déontologique : Données publiques BOAMP/TED réelles. Aucune extrapolation de contact ou donnée privée.
         </span>
         <span className="font-mono text-slate-400">Signal-to-Deal v1.0</span>
       </div>

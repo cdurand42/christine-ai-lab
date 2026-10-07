@@ -68,7 +68,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onSelectProject, onOpenImage
 
           <p className="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto leading-relaxed font-normal">
             De la cartographie organisationnelle industrielle aux studios publicitaires multimodaux et moteurs analytiques DuckDB. <br className="hidden sm:inline" />
-            <span className="text-slate-400">Pas de promesses théoriques : des produits fonctionnels, testés et déployés.</span>
+            <span className="text-slate-400">Pas de promesses théoriques : des produits fonctionnels, testés et démontrés.</span>
           </p>
 
           {/* Quick Metrics / Signals */}
@@ -78,11 +78,11 @@ export const HomePage: React.FC<HomePageProps> = ({ onSelectProject, onOpenImage
               <div className="text-[11px] text-slate-400 mt-0.5">Produits &amp; Pilotes</div>
             </div>
             <div className="p-3 rounded-xl bg-slate-900/80 border border-slate-800/80">
-              <div className="text-xl font-bold text-indigo-400">100%</div>
-              <div className="text-[11px] text-slate-400 mt-0.5">Core Python &amp; LLM</div>
+              <div className="text-xl font-bold text-indigo-400">Python</div>
+              <div className="text-[11px] text-slate-400 mt-0.5">Core &amp; LLMs</div>
             </div>
             <div className="p-3 rounded-xl bg-slate-900/80 border border-slate-800/80">
-              <div className="text-xl font-bold text-emerald-400">Zero-Leak</div>
+              <div className="text-xl font-bold text-emerald-400">Privacy-First</div>
               <div className="text-[11px] text-slate-400 mt-0.5">Architecture Sas &amp; FinOps</div>
             </div>
             <div className="p-3 rounded-xl bg-slate-900/80 border border-slate-800/80">

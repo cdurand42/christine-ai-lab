@@ -15,7 +15,7 @@ export const AboutPage: React.FC = () => {
           À propos — Christine AI Lab
         </h1>
         <p className="text-base text-slate-300 leading-relaxed font-mono">
-          Product Builder &amp; AI Systems Engineer. Je transforme des frictions métier complexes en produits logiciels testés, sécurisés et déployés.
+          Product Builder &amp; AI Systems Engineer. Je transforme des frictions métier complexes en produits logiciels testés, sécurisés et démontrés.
         </p>
       </div>
 
@@ -34,7 +34,7 @@ export const AboutPage: React.FC = () => {
         <div className="p-6 rounded-2xl bg-slate-900/60 border border-slate-800 space-y-3">
           <div className="flex items-center gap-2 text-xs font-mono font-bold text-emerald-400 uppercase tracking-wider">
             <Shield className="w-4 h-4 text-emerald-400" />
-            Pragmatisme &amp; Zéro Complaisance IA
+            Pragmatisme &amp; Rigueur IA
           </div>
           <p className="text-xs text-slate-300 leading-relaxed">
             L'IA générative n'est pas une formule magique. Un LLM ne doit jamais déformer un logo d'entreprise (résolu par un pipeline déterministe Pillow), halluciner un contact commercial (banni dans le pilote ECS) ou faire exploser les budgets de tokens (surveillé par microservice FinOps avec précision Decimal).
@@ -57,7 +57,7 @@ export const AboutPage: React.FC = () => {
             Culture QA, Tests &amp; Sécurité
           </div>
           <p className="text-xs text-slate-300 leading-relaxed">
-            Chaque projet s'appuie sur une suite de tests rigoureuse : fixtures Pytest isolant le réseau, validations de bout en bout Playwright sur mobile et desktop, contrôle Gitleaks pour éliminer tout risque de fuite de secret avant publication.
+            Chaque projet s'appuie sur une suite de tests rigoureuse : fixtures Pytest isolant le réseau, validations de bout en bout Playwright sur mobile et desktop, contrôle Gitleaks pour prévenir les risques de fuite de secrets avant publication.
           </p>
         </div>
       </div>

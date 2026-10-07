@@ -12,13 +12,17 @@ Ce portfolio interactif présente des applications d'intelligence artificielle a
 Démontrer auprès d'interlocuteurs et directeurs techniques une capacité éprouvée de **Product Builder / Lead AI Engineer** :
 - **Compréhension métier immédiate** : industrie manufacturière, énergie, édition événementielle, marchés publics.
 - **Excellence Python** : Pydantic v2, DuckDB, Apache Parquet, FastAPI, Streamlit, arithmétique `Decimal`.
-- **Gouvernance & Guardrails IA** : modèles multimodaux avec surcouche déterministe vectorielle (Pillow Lanczos) et zéro complaisance (refus d'extrapoler des contacts ou des métriques artificielles).
-- **Sécurité & Zero-Leak** : sas d'authentification PBKDF2 (600k itérations), architectures zero-knowledge pour la télémétrie FinOps, audits automatisés Gitleaks.
-- **Zéro coût cloud inutile** : requêtage analytique colonnaire en mémoire et déploiements gratuits hautement disponibles (GitHub Pages, Streamlit Cloud).
+- **Gouvernance & Guardrails IA** : modèles multimodaux avec surcouche déterministe vectorielle (Pillow Lanczos) et garde-fous stricts (refus d'extrapoler des contacts ou des métriques artificielles).
+- **Sécurité & Confidentialité** : sas d'authentification PBKDF2 (600k itérations), architectures zero-knowledge pour la télémétrie FinOps, audits automatisés Gitleaks.
+- **Maîtrise des coûts d'infrastructure** : requêtage analytique colonnaire en mémoire et hébergement sans coût de serveur managé (GitHub Pages, Streamlit Cloud).
 
 ---
 
-## 2. Projets Réels Documentés & Déployés
+## 2. Projets Réels Documentés & Démontrés
+
+Le portfolio Christine AI Lab est déployé publiquement sur GitHub Pages. Les 7 projets d'ingénierie présentés sont classés selon leur modalité d'évaluation :
+- **Interactive Portfolio Demo** : démonstrateur interactif intégré exécutable dans le navigateur.
+- **Case Study** : étude de cas technique approfondie (architecture, décisions, tests et sécurité).
 
 1. **WorkForce Optimize AI** — Cartographie organisationnelle ETI, audit de tâches et arbitrage Humain / Copilot / Agent (Cas Novalis Industries, 2 400 salariés).
 2. **Éditions Larivière AI Studio** — Studio de génération publicitaire multiformat avec charte de marque déterministe et sas de chargement mémoire sécurisé (`Lariviere-Live`).
