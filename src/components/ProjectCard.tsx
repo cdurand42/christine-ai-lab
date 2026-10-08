@@ -34,8 +34,23 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, onSelect, onO
             <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent"></div>
             
             {/* Badges on cover */}
-            <div className="absolute top-3 left-3 flex gap-2">
-              <StatusBadge status={project.status} size="sm" />
+            <div className="absolute top-3 left-3 flex items-center gap-1.5">
+              <span className={`inline-flex items-center gap-1.5 font-mono text-[10px] font-semibold px-2.5 py-0.5 rounded-full border backdrop-blur-sm ${
+                project.access === 'LIVE APP'
+                  ? 'bg-emerald-500/10 text-emerald-300 border-emerald-500/30'
+                  : project.access === 'PROTECTED LIVE'
+                  ? 'bg-teal-500/10 text-teal-300 border-teal-500/30'
+                  : 'bg-sky-500/10 text-sky-300 border-sky-500/30'
+              }`}>
+                <span className={`w-1.5 h-1.5 rounded-full ${
+                  project.access === 'LIVE APP'
+                    ? 'bg-emerald-400 animate-pulse'
+                    : project.access === 'PROTECTED LIVE'
+                    ? 'bg-teal-400'
+                    : 'bg-sky-400'
+                }`}></span>
+                {project.status} · {project.access}
+              </span>
             </div>
 
             <div className="absolute top-3 right-3 font-mono text-[10px] px-2 py-0.5 rounded bg-slate-950/80 text-slate-300 border border-slate-800 backdrop-blur-sm">
@@ -121,36 +136,44 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, onSelect, onO
       <div className="px-5 py-3.5 border-t border-slate-800/80 bg-slate-950/40 flex items-center justify-between gap-2">
         <button
           onClick={() => onSelect(project.id)}
-          className="text-xs font-semibold text-sky-400 hover:text-sky-300 flex items-center gap-1 transition-colors"
+          className="text-xs font-semibold text-slate-400 hover:text-sky-300 flex items-center gap-1 transition-colors"
         >
           {mode === 'product' ? 'Voir le projet' : 'Étude d\'ingénierie'}
           <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
         </button>
 
-        {project.demoType === 'REAL LIVE APP' ? (
-          <button
-            onClick={() => onSelect(project.id)}
-            className="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg text-xs font-medium bg-emerald-500/10 text-emerald-300 hover:bg-emerald-500/20 border border-emerald-500/30 transition-colors"
-          >
-            <Play className="w-3 h-3 fill-current" />
-            <span>Launch Live App</span>
-          </button>
-        ) : project.demoType === 'INTERACTIVE PORTFOLIO DEMO' ? (
-          <button
-            onClick={() => onSelect(project.id)}
-            className="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg text-xs font-medium bg-sky-500/10 text-sky-300 hover:bg-sky-500/20 border border-sky-500/30 transition-colors"
-          >
-            <Play className="w-3 h-3 fill-current" />
-            <span>Interactive Demo</span>
-          </button>
-        ) : (
-          <button
-            onClick={() => onSelect(project.id)}
-            className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-xs font-medium bg-slate-800/80 text-slate-400 hover:text-slate-200 border border-slate-700/60 transition-colors"
-          >
-            <span>Case Study</span>
-          </button>
-        )}
+        <div className="flex items-center gap-2">
+          {project.liveDemoUrl ? (
+            <>
+              <button
+                onClick={() => onSelect(project.id)}
+                className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg text-xs font-medium bg-slate-900 text-slate-300 hover:text-white border border-slate-800 hover:border-slate-700 transition-colors"
+                title="Démonstration légère embarquée dans Christine AI Lab"
+              >
+                <span>Interactive Demo</span>
+              </button>
+              <a
+                href={project.liveDemoUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={(e) => e.stopPropagation()}
+                className="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg text-xs font-semibold bg-emerald-400 text-slate-950 hover:bg-emerald-300 transition-colors shadow-sm"
+                title="Ouvrir l'application Streamlit réelle dans un nouvel onglet"
+              >
+                <Play className="w-3 h-3 fill-current" />
+                <span>Launch Live App ↗</span>
+              </a>
+            </>
+          ) : (
+            <button
+              onClick={() => onSelect(project.id)}
+              className="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg text-xs font-medium bg-sky-500/10 text-sky-300 hover:bg-sky-500/20 border border-sky-500/30 transition-colors"
+            >
+              <Play className="w-3 h-3 fill-current" />
+              <span>Interactive Demo</span>
+            </button>
+          )}
+        </div>
       </div>
     </div>
   );

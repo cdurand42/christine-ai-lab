@@ -17,7 +17,7 @@ interface ProjectDetailPageProps {
 }
 
 export const ProjectDetailPage: React.FC<ProjectDetailPageProps> = ({ project, onBack, onOpenImage }) => {
-  const { mode } = useViewMode();
+  const { mode, setMode } = useViewMode();
 
   const renderInteractiveDemo = () => {
     switch (project.interactiveDemoId) {
@@ -50,7 +50,22 @@ export const ProjectDetailPage: React.FC<ProjectDetailPageProps> = ({ project, o
         </button>
 
         <div className="flex items-center gap-2">
-          <StatusBadge status={project.status} />
+          <span className={`inline-flex items-center gap-1.5 font-mono text-xs font-semibold px-3 py-1 rounded-full border ${
+            project.access === 'LIVE APP'
+              ? 'bg-emerald-500/10 text-emerald-300 border-emerald-500/30'
+              : project.access === 'PROTECTED LIVE'
+              ? 'bg-teal-500/10 text-teal-300 border-teal-500/30'
+              : 'bg-sky-500/10 text-sky-300 border-sky-500/30'
+          }`}>
+            <span className={`w-1.5 h-1.5 rounded-full ${
+              project.access === 'LIVE APP'
+                ? 'bg-emerald-400 animate-pulse'
+                : project.access === 'PROTECTED LIVE'
+                ? 'bg-teal-400'
+                : 'bg-sky-400'
+            }`}></span>
+            {project.status} · {project.access}
+          </span>
           <span className="text-xs font-mono px-2.5 py-1 rounded-full bg-slate-900 border border-slate-800 text-slate-400">
             {project.category}
           </span>
@@ -66,38 +81,82 @@ export const ProjectDetailPage: React.FC<ProjectDetailPageProps> = ({ project, o
           {project.baseline}
         </p>
 
-        {/* Action strip: Explicit Live App vs Interactive Demo vs Case Study */}
-        <div className="flex flex-wrap items-center gap-3 pt-2">
-          {project.demoType === 'REAL LIVE APP' && project.liveDemoUrl && (
-            <a
-              href={project.liveDemoUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-semibold bg-emerald-500 text-slate-950 hover:bg-emerald-400 transition-colors shadow-lg shadow-emerald-500/20"
+        {/* Action strip: Explicit Live App vs Interactive Demo vs Engineering View */}
+        <div className="space-y-3 pt-2">
+          <div className="flex flex-wrap items-center gap-3">
+            {project.liveDemoUrl ? (
+              <>
+                <a
+                  href={project.liveDemoUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs font-bold bg-emerald-400 text-slate-950 hover:bg-emerald-300 transition-all shadow-lg shadow-emerald-500/20"
+                >
+                  <Play className="w-3.5 h-3.5 fill-current" />
+                  <span>LAUNCH LIVE APP ↗</span>
+                </a>
+
+                {project.interactiveDemoId && (
+                  <button
+                    onClick={() => {
+                      const el = document.getElementById('interactive-demo-section');
+                      if (el) el.scrollIntoView({ behavior: 'smooth' });
+                    }}
+                    className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-semibold bg-slate-900 text-sky-300 hover:bg-slate-800 border border-sky-500/30 transition-colors"
+                  >
+                    <Sparkles className="w-3.5 h-3.5 text-sky-400" />
+                    <span>INTERACTIVE DEMO</span>
+                  </button>
+                )}
+              </>
+            ) : (
+              <>
+                {project.interactiveDemoId && (
+                  <button
+                    onClick={() => {
+                      const el = document.getElementById('interactive-demo-section');
+                      if (el) el.scrollIntoView({ behavior: 'smooth' });
+                    }}
+                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs font-bold bg-sky-500 text-slate-950 hover:bg-sky-400 transition-all shadow-lg shadow-sky-500/20"
+                  >
+                    <Play className="w-3.5 h-3.5 fill-current" />
+                    <span>INTERACTIVE DEMO</span>
+                  </button>
+                )}
+                <span className="text-[11px] font-mono text-slate-400 px-3 py-2 rounded-xl bg-slate-900/80 border border-slate-800">
+                  Live deployment planned
+                </span>
+              </>
+            )}
+
+            <button
+              onClick={() => {
+                setMode('engineering');
+                const el = document.getElementById('engineering-view-section');
+                if (el) el.scrollIntoView({ behavior: 'smooth' });
+              }}
+              className={`inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-mono transition-colors border ${
+                mode === 'engineering'
+                  ? 'bg-sky-500/10 text-sky-300 border-sky-500/40 font-semibold'
+                  : 'bg-slate-900 hover:bg-slate-800 border-slate-800 text-slate-300'
+              }`}
             >
-              <Play className="w-3.5 h-3.5 fill-current" />
-              <span>Launch Live App</span>
-              <ExternalLink className="w-3 h-3" />
-            </a>
-          )}
+              <Terminal className="w-3.5 h-3.5 text-slate-400" />
+              <span>ENGINEERING VIEW</span>
+            </button>
 
-          {project.demoType === 'INTERACTIVE PORTFOLIO DEMO' && (
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-semibold bg-sky-500/10 text-sky-300 border border-sky-500/30">
-              <Sparkles className="w-3.5 h-3.5 text-sky-400" />
-              <span>Interactive Portfolio Demo</span>
-            </div>
-          )}
+            {project.repoUrl && (
+              <div className="inline-flex items-center gap-2 px-3.5 py-2.5 rounded-xl text-xs font-mono bg-slate-900/80 border border-slate-800 text-slate-400">
+                <Lock className="w-3.5 h-3.5 text-slate-500" />
+                <span>Dépôt : {project.repoVisibility}</span>
+              </div>
+            )}
+          </div>
 
-          {project.demoType === 'CASE STUDY ONLY' && (
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-semibold bg-slate-900 text-slate-300 border border-slate-800">
-              <span>Technical Case Study</span>
-            </div>
-          )}
-
-          {project.repoUrl && (
-            <div className="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs font-mono bg-slate-900 border border-slate-800 text-slate-300">
-              <Lock className="w-3.5 h-3.5 text-slate-400" />
-              <span>Dépôt : {project.repoVisibility}</span>
+          {project.liveDemoUrl && (
+            <div className="text-[11px] font-mono text-slate-400 flex flex-wrap items-center gap-x-4 gap-y-1">
+              <span><strong className="text-emerald-400">LAUNCH LIVE APP</strong> = vraie application {project.name}.</span>
+              <span><strong className="text-sky-400">INTERACTIVE DEMO</strong> = démonstration légère embarquée dans Christine AI Lab.</span>
             </div>
           )}
         </div>
@@ -123,7 +182,7 @@ export const ProjectDetailPage: React.FC<ProjectDetailPageProps> = ({ project, o
 
       {/* INTERACTIVE DEMO (IF AVAILABLE) */}
       {project.interactiveDemoId && (
-        <section className="space-y-4">
+        <section id="interactive-demo-section" className="space-y-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2">
               <Sparkles className="w-4 h-4 text-sky-400" />
@@ -137,7 +196,7 @@ export const ProjectDetailPage: React.FC<ProjectDetailPageProps> = ({ project, o
       )}
 
       {/* ARCHITECTURE & WORKFLOW */}
-      <section className="space-y-4">
+      <section id="engineering-view-section" className="space-y-4">
         <ArchitectureDiagram
           overview={project.architecture.overview}
           flow={project.architecture.flow}

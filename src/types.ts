@@ -5,10 +5,11 @@ export type ProjectCategory =
   | 'Data & Decision Systems'
   | 'Agentic Intelligence & Public Tenders'
   | 'Developer Tools & FinOps'
-  | 'Agentic AI & Edge Systems'
   | 'Experimental Lab';
 
 export type ProjectStatus = 'LIVE' | 'PILOT' | 'BETA' | 'PROTOTYPE' | 'EXPERIMENTAL';
+
+export type ProjectAccess = 'LIVE APP' | 'PROTECTED LIVE' | 'INTERACTIVE DEMO';
 
 export interface TechDecision {
   decision: string;
@@ -29,6 +30,7 @@ export interface ProjectData {
   baseline: string;
   category: ProjectCategory;
   status: ProjectStatus;
+  access: ProjectAccess;
   featured: boolean;
   order: number;
   

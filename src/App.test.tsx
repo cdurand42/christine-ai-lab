@@ -4,16 +4,16 @@ import { CATEGORIES } from './data/taxonomy';
 import { SKILL_DOMAINS } from './data/skills';
 
 describe('Christine AI Lab Data Integrity', () => {
-  it('should have all 7 primary projects registered', () => {
-    expect(PROJECTS.length).toBeGreaterThanOrEqual(7);
+  it('should have exactly 5 primary projects registered', () => {
+    expect(PROJECTS.length).toBe(5);
     const ids = PROJECTS.map(p => p.id);
-    expect(ids).toContain('workforce-ai');
-    expect(ids).toContain('lariviere-ai');
-    expect(ids).toContain('datalab-enedis');
-    expect(ids).toContain('ecs-signal-to-deal');
-    expect(ids).toContain('gemini-usage-monitor');
-    expect(ids).toContain('jarvis');
-    expect(ids).toContain('zcube-enedis-pilot');
+    expect(ids).toEqual([
+      'workforce-ai',
+      'lariviere-ai',
+      'datalab-enedis',
+      'ecs-signal-to-deal',
+      'gemini-usage-monitor'
+    ]);
   });
 
   it('each project should have problem, solution, impact and real stack defined', () => {
@@ -29,11 +29,12 @@ describe('Christine AI Lab Data Integrity', () => {
 
   it('featured projects should be well prioritized', () => {
     const featured = PROJECTS.filter(p => p.featured);
-    expect(featured.length).toBeGreaterThanOrEqual(4);
+    expect(featured.length).toBe(5);
     expect(featured.map(f => f.id)).toContain('workforce-ai');
     expect(featured.map(f => f.id)).toContain('lariviere-ai');
     expect(featured.map(f => f.id)).toContain('datalab-enedis');
     expect(featured.map(f => f.id)).toContain('ecs-signal-to-deal');
+    expect(featured.map(f => f.id)).toContain('gemini-usage-monitor');
   });
 
   it('taxonomy categories should be coherent', () => {
@@ -51,9 +52,22 @@ describe('Christine AI Lab Data Integrity', () => {
 
   it('should have honest demoType and audited status on all projects', () => {
     for (const project of PROJECTS) {
-      expect(['REAL LIVE APP', 'INTERACTIVE PORTFOLIO DEMO', 'CASE STUDY ONLY']).toContain(project.demoType);
-      // No project should be marked LIVE unless unauthenticated public live URL is verified
+      expect(['REAL LIVE APP', 'INTERACTIVE PORTFOLIO DEMO']).toContain(project.demoType);
       expect(['PILOT', 'PROTOTYPE', 'BETA']).toContain(project.status);
+      expect(['LIVE APP', 'PROTECTED LIVE', 'INTERACTIVE DEMO']).toContain(project.access);
+    }
+  });
+
+  it('should distinguish real live apps from interactive demos', () => {
+    const liveApps = PROJECTS.filter(p => p.liveDemoUrl);
+    expect(liveApps.length).toBe(3);
+    expect(liveApps.map(p => p.id)).toEqual(['workforce-ai', 'lariviere-ai', 'datalab-enedis']);
+
+    const interactiveOnly = PROJECTS.filter(p => !p.liveDemoUrl);
+    expect(interactiveOnly.length).toBe(2);
+    expect(interactiveOnly.map(p => p.id)).toEqual(['ecs-signal-to-deal', 'gemini-usage-monitor']);
+    for (const p of interactiveOnly) {
+      expect(p.access).toBe('INTERACTIVE DEMO');
     }
   });
 });

@@ -50,7 +50,7 @@ export const InventoryPage: React.FC = () => {
       status: 'PILOT' as const,
       category: 'Agentic Intelligence & Public Tenders',
       visibility: 'Proprietary Pilot (Private)',
-      hasLiveDemo: true,
+      hasLiveDemo: false,
       securityNotes: 'Données BOAMP/TED publiques. Aucun contact inventé, aucun accès CRM Evernex. Dépôt conservé privé.'
     },
     {
@@ -62,32 +62,8 @@ export const InventoryPage: React.FC = () => {
       status: 'PILOT' as const,
       category: 'Developer Tools & FinOps',
       visibility: 'Public Gateway + Private Service',
-      hasLiveDemo: true,
-      securityNotes: 'Architecture Zero-Knowledge : ne reçoit pas la clé API Google. Ingestion de compteurs de tokens uniquement. Protection mot de passe hmac constant.'
-    },
-    {
-      name: 'Jarvis Local Assistant',
-      localPath: 'D:\\Jarvis',
-      remote: 'https://github.com/cdurand42/jarvis.git',
-      branch: 'feat/mvp-bootstrap',
-      stack: 'Python 3.10+, Gemini 2.5 Flash, FastAPI, WebSockets, HTML5 Speech, SQLite, PWA',
-      status: 'PROTOTYPE' as const,
-      category: 'Agentic AI & Edge Systems',
-      visibility: 'Proprietary Prototype (Private)',
-      hasLiveDemo: true,
-      securityNotes: 'Écoute loopback 127.0.0.1 uniquement. Validation obligatoire des actions système par l\'utilisateur. Proxy chiffré Tailscale Serve.'
-    },
-    {
-      name: 'Zcube Enedis Pilot',
-      localPath: 'D:\\Zcube-Enedis-Pilot',
-      remote: 'https://github.com/cdurand42/Zcube-Enedis-Pilot.git',
-      branch: 'main',
-      stack: 'Python, Streamlit, Gemini, python-pptx, GeminiUsageMonitor Client',
-      status: 'PILOT' as const,
-      category: 'Enterprise AI & Organization',
-      visibility: 'Proprietary Pilot (Private)',
       hasLiveDemo: false,
-      securityNotes: 'Pilote interne de cadrage territorial. Intégration de télémétrie de coût non bloquante.'
+      securityNotes: 'Architecture Zero-Knowledge : ne reçoit pas la clé API Google. Ingestion de compteurs de tokens uniquement. Protection mot de passe hmac constant.'
     }
   ];
 

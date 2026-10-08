@@ -7,6 +7,7 @@ export const PROJECTS: ProjectData[] = [
     baseline: 'Cartographie organisationnelle ETI, qualification des tâches et arbitrage Humain / Copilot / Agent',
     category: 'Enterprise AI & Organization',
     status: 'PILOT',
+    access: 'LIVE APP',
     featured: true,
     order: 1,
     problem: 'Les ETI industrielles font face à des départs massifs en retraite (ex: 18% à 5 ans), une pénurie de compétences critiques en automatisme/PLC, et un manque de méthode pour arbitrer objectivement entre automatisation par agents, assistance copilot ou maintien humain sans risquer l\'outil de production.',
@@ -61,10 +62,11 @@ export const PROJECTS: ProjectData[] = [
       ],
       dataPrivacy: 'Aucune donnée RH ou industrielle interne n\'est transmise à un serveur tiers.'
     },
-    demoType: 'INTERACTIVE PORTFOLIO DEMO',
+    demoType: 'REAL LIVE APP',
     hasLiveDemo: true,
+    liveDemoUrl: 'https://workforce-ai.streamlit.app/',
     interactiveDemoId: 'workforce-matrix',
-    liveDemoLabel: 'Interactive Portfolio Demo',
+    liveDemoLabel: 'Launch Live App',
     repoVisibility: 'Private Enterprise',
     repoUrl: 'https://github.com/cdurand42/WorkForceAI',
     assets: [
@@ -107,6 +109,7 @@ export const PROJECTS: ProjectData[] = [
     baseline: 'Génération publicitaire multiformat avec charte de marque déterministe et sas d\'accès sécurisé',
     category: 'Multimodal AI & Creative Automation',
     status: 'PILOT',
+    access: 'PROTECTED LIVE',
     featured: true,
     order: 2,
     problem: 'Créer manuellement des kits publicitaires complets pour des événements de référence (Game Fair, Bol d\'Or) demande des jours de déclinaisons graphiques (Feed carré 1080×1080, Story/Reel 1080×1920, carrousels). Les modèles d\'IA générative classiques déforment les logos vectoriels et hallucinent la typographie officielle.',
@@ -161,10 +164,11 @@ export const PROJECTS: ProjectData[] = [
       ],
       dataPrivacy: 'Aucune donnée confidentielle ou briefing privé n\'est indexé ou rendu public.'
     },
-    demoType: 'INTERACTIVE PORTFOLIO DEMO',
+    demoType: 'REAL LIVE APP',
     hasLiveDemo: true,
+    liveDemoUrl: 'https://lariviere-ai.streamlit.app/',
     interactiveDemoId: 'lariviere-studio',
-    liveDemoLabel: 'Interactive Portfolio Demo',
+    liveDemoLabel: 'Launch Live App',
     repoVisibility: 'Public Gateway',
     repoUrl: 'https://github.com/cdurand42/Lariviere-Live',
     assets: [
@@ -192,6 +196,7 @@ export const PROJECTS: ProjectData[] = [
     baseline: 'Moteur analytique territorial sur l\'Open Data Enedis (DuckDB & Parquet)',
     category: 'Data & Decision Systems',
     status: 'PILOT',
+    access: 'PROTECTED LIVE',
     featured: true,
     order: 3,
     problem: 'L\'Open Data électrique national couvre des dizaines de milliers de communes et des millions de lignes de consommation. Croiser ces volumes, comparer des territoires homogènes et décomposer les variations annuelles par secteur (résidentiel, tertiaire, industriel, agricole) sature les tableurs et entraîne habituellement des coûts d\'infrastructure cloud élevés.',
@@ -244,10 +249,11 @@ export const PROJECTS: ProjectData[] = [
       ],
       dataPrivacy: 'Données strictement issues des flux publics de distribution Enedis.'
     },
-    demoType: 'INTERACTIVE PORTFOLIO DEMO',
+    demoType: 'REAL LIVE APP',
     hasLiveDemo: true,
+    liveDemoUrl: 'https://datalab-enedis.streamlit.app/',
     interactiveDemoId: 'datalab-bench',
-    liveDemoLabel: 'Interactive Portfolio Demo',
+    liveDemoLabel: 'Launch Live App',
     repoVisibility: 'Public Gateway',
     repoUrl: 'https://github.com/cdurand42/DataLab-Live',
     assets: [
@@ -265,6 +271,7 @@ export const PROJECTS: ProjectData[] = [
     baseline: 'Intelligence d\'appels d\'offres publics audiovisuels & IT pour le financement d\'actifs',
     category: 'Agentic Intelligence & Public Tenders',
     status: 'PILOT',
+    access: 'INTERACTIVE DEMO',
     featured: true,
     order: 4,
     problem: 'Dans le financement d\'équipements IT et audiovisuels pour les grands comptes et collectivités, les opportunités d\'appels d\'offres publics sont dispersées (BOAMP, TED, APProch). Les commerciaux perdent des heures à éplucher des avis, sans savoir qui détenait le marché historique ni si des montants ont été rendus publics.',
@@ -317,9 +324,9 @@ export const PROJECTS: ProjectData[] = [
       dataPrivacy: 'Données strictement limitées aux avis d\'appels d\'offres publiés officiellement par l\'État et les collectivités.'
     },
     demoType: 'INTERACTIVE PORTFOLIO DEMO',
-    hasLiveDemo: true,
+    hasLiveDemo: false,
     interactiveDemoId: 'ecs-radar',
-    liveDemoLabel: 'Interactive Portfolio Demo',
+    liveDemoLabel: 'Interactive Demo',
     repoVisibility: 'Proprietary Pilot',
     repoUrl: 'https://github.com/cdurand42/ecs-signal-to-deal',
     assets: [
@@ -337,9 +344,10 @@ export const PROJECTS: ProjectData[] = [
     baseline: 'Microservice FinOps zero-knowledge & tableau de bord de télémétrie de tokens en temps réel',
     category: 'Developer Tools & FinOps',
     status: 'PILOT',
+    access: 'INTERACTIVE DEMO',
     featured: true,
     order: 5,
-    problem: 'Lorsqu\'une équipe fait tourner plusieurs prototypes et produits basés sur l\'API Google Gemini (Lariviere, Enedis, Jarvis, etc.), il devient très difficile de savoir quel projet consomme quels tokens, de calculer le coût réel des appels multimodaux (texte, images, audio) et d\'alerter sur les dépassements de budget sans risquer d\'exposer la clé API secrète.',
+    problem: 'Lorsqu\'une équipe fait tourner plusieurs prototypes et produits basés sur l\'API Google Gemini (Lariviere, Enedis, WorkForce, etc.), il devient très difficile de savoir quel projet consomme quels tokens, de calculer le coût réel des appels multimodaux (texte, images, audio) et d\'alerter sur les dépassements de budget sans risquer d\'exposer la clé API secrète.',
     solution: 'Un microservice indépendant haute fiabilité (FastAPI, SQLAlchemy 2.0, Alembic) et un dashboard Streamlit public sécurisé. Il ingère les métadonnées de consommation (compteurs de tokens, nom de modèle, type d\'opération) avec garantie zero-knowledge : la clé API Google Gemini n\'est jamais reçue, ni stockée, ni exposée. Le calcul financier utilise la précision Python Decimal avec des snapshots tarifaires immuables.',
     impact: 'Surveillance budgétaire au centime près sur l\'ensemble des projets du lab, évitant tout risque d\'exposition de clé Google grâce à l\'isolation des flux.',
     stack: ['FastAPI', 'SQLAlchemy 2.0', 'Alembic', 'Pydantic v2', 'Streamlit', 'Python Decimal', 'Pytest'],
@@ -390,9 +398,9 @@ export const PROJECTS: ProjectData[] = [
       dataPrivacy: 'Aucun contenu de prompt ni de réponse textuelle n\'est enregistré : uniquement les compteurs de tokens.'
     },
     demoType: 'INTERACTIVE PORTFOLIO DEMO',
-    hasLiveDemo: true,
+    hasLiveDemo: false,
     interactiveDemoId: 'finops-calculator',
-    liveDemoLabel: 'Interactive Portfolio Demo',
+    liveDemoLabel: 'Interactive Demo',
     repoVisibility: 'Public Gateway',
     repoUrl: 'https://github.com/cdurand42/GeminiUsageDashboard',
     assets: [
@@ -400,142 +408,6 @@ export const PROJECTS: ProjectData[] = [
         type: 'diagram',
         url: './assets/favicon.svg',
         caption: 'GeminiUsageMonitor — Architecture de télémétrie FinOps zero-knowledge',
-        isCover: true
-      }
-    ]
-  },
-  {
-    id: 'jarvis',
-    name: 'Jarvis — Assistant Local Vocal & Actions',
-    baseline: 'Assistant personnel Windows & mobile local avec sandbox d\'actions et isolation de profil',
-    category: 'Agentic AI & Edge Systems',
-    status: 'PROTOTYPE',
-    featured: false,
-    order: 6,
-    problem: 'Les assistants vocaux commerciaux (Alexa, Google Assistant, Siri) envoient l\'intégralité des échanges vocaux sur des serveurs distants, ne peuvent pas exécuter d\'actions concrètes sur un poste de travail Windows local, et ne disposent d\'aucun contrôle granulaire par profil d\'utilisateur (ex: profil enfant sécurisé vs profil admin).',
-    solution: 'Un assistant personnel hybride exécuté sur PC Windows, propulsé par Gemini 2.5 Flash, offrant une interface vocale PWA accessible à la fois sur le bureau et sur mobile via Tailscale Serve HTTPS. L\'exécution de commandes système (Notepad, Calculatrice, Explorateur, ouverture d\'URLs) est strictement contrôlée par une demande d\'approbation explicite de l\'utilisateur.',
-    impact: 'Un assistant intelligent capable d\'agir sur le PC sans jamais violer la vie privée ni exécuter de code arbitraire non autorisé.',
-    stack: ['Python 3.10+', 'Gemini 2.5 Flash', 'FastAPI', 'WebSockets', 'HTML5 Web Speech API', 'SQLite', 'PWA / Service Worker'],
-    models: ['Google Gemini 2.5 Flash'],
-    architecture: {
-      overview: 'Architecture locale sécurisée : boucle d\'écoute locale sur 127.0.0.1, isolation stricte par profil SQLite, et proxy HTTPS privé Tailscale Serve pour l\'accès mobile sans ouvrir de port public.',
-      flow: [
-        { step: 'Interaction Vocale / Texte', detail: 'Capture via Web Speech API ou saisie clavier dans la PWA responsive' },
-        { step: 'Raisonnement LLM', detail: 'Interprétation de l\'intention via Gemini 2.5 Flash avec prompts contextualisés au profil' },
-        { step: 'Détection d\'Outil', detail: 'Identification de l\'action demandée (ex: ouvrir une URL, lancer la calculatrice)' },
-        { step: 'Porte d\'Approbation Humaine', detail: 'Interception de l\'action et demande de confirmation explicite à l\'utilisateur' },
-        { step: 'Exécution Sandboxée', detail: 'Lancement du sous-processus Windows approuvé avec arguments assainis' }
-      ]
-    },
-    whatIBuilt: [
-      'Système d\'approbation d\'actions ("Human-in-the-loop") empêchant toute exécution silencieuse d\'action sur la machine',
-      'Isolation complète des données par profil SQLite (`demo`, profil sécurisé enfant `joseph`)',
-      'Application web progressive (PWA) installable sur Android avec shell fonctionnant hors-ligne',
-      'Guide d\'accès distant privé via Tailscale Serve chiffré sans exposition sur Internet public'
-    ],
-    whatILearned: [
-      'Donner des outils système à un modèle de langage sans barrière de confirmation humaine est une faille critique de sécurité. L\'approbation utilisateur doit être native dans l\'architecture.',
-      'Les API Web Speech modernes permettent une reconnaissance vocale fluide directement dans le navigateur sans dépendances lourdes de modèles Whisper locaux.'
-    ],
-    decisions: [
-      {
-        decision: 'Écoute exclusive sur loopback (127.0.0.1) et Tailscale Serve',
-        rationale: 'Interdit catégoriquement le binding sur 0.0.0.0 pour empêcher tout accès non autorisé depuis le réseau local public.',
-        alternativeConsidered: 'Ouverture directe d\'un port avec tunnel ngrok public.'
-      },
-      {
-        decision: 'Validation systématique avant ouverture d\'URL ou lancement de programme',
-        rationale: 'Protège contre les attaques de prompt injection qui tenteraient de faire ouvrir des sites malveillants à l\'utilisateur.',
-        alternativeConsidered: 'Exécution autonome immédiate sans confirmation.'
-      }
-    ],
-    testing: {
-      frameworks: ['Pytest', 'Unittest sandbox'],
-      description: 'Tests de restriction des profils (vérification que le profil restreint refuse les commandes non autorisées) et validation des tokens distants.',
-      sampleCommand: 'pytest tests/ -v'
-    },
-    security: {
-      highlights: [
-        'Sandbox de sous-processus : liste blanche stricte de commandes autorisées',
-        'Blocage systématique du binding sur adresse non-locale sans jeton de sécurité',
-        'Séparation stricte des historiques SQLite par profil'
-      ],
-      dataPrivacy: 'Données d\'historique stockées localement sur le disque de la machine.'
-    },
-    demoType: 'INTERACTIVE PORTFOLIO DEMO',
-    hasLiveDemo: true,
-    interactiveDemoId: 'jarvis-sandbox',
-    liveDemoLabel: 'Interactive Portfolio Demo',
-    repoVisibility: 'Proprietary Pilot',
-    repoUrl: 'https://github.com/cdurand42/jarvis',
-    assets: [
-      {
-        type: 'image',
-        url: './assets/jarvis/icon-512.png',
-        caption: 'Jarvis — Icône PWA pour application bureau et mobile',
-        isCover: true
-      }
-    ]
-  },
-  {
-    id: 'zcube-enedis-pilot',
-    name: 'Zcube Enedis Pilot',
-    baseline: 'Cadrage de scénarios territoriaux par IA et génération automatisée de supports PowerPoint',
-    category: 'Enterprise AI & Organization',
-    status: 'PILOT',
-    featured: false,
-    order: 7,
-    problem: 'Dans le cadre d\'études de cadrage pour des projets de distribution électrique régionale, la synthèse des contextes territoriaux en livrables exécutifs PowerPoint demande un temps considérable et une rigueur de mise en page constante.',
-    solution: 'Un pilote d\'intelligence territoriale intégrant des scénarios de cadrage d\'opportunités, la synthèse d\'éléments de contexte territorial Enedis et la génération automatisée de présentations PowerPoint professionnelles via python-pptx, avec suivi de la consommation de tokens par GeminiUsageMonitor.',
-    impact: 'Génération structurée d\'un support de cadrage complet intégrant les données territoriales et les orientations stratégiques.',
-    stack: ['Python', 'Streamlit', 'Google Gemini', 'python-pptx', 'GeminiUsageMonitor Client', 'Pytest'],
-    architecture: {
-      overview: 'Pipeline d\'aide au cadrage : recueil des paramètres de scénario, enrichissement par contexte territorial en cache, génération de brief exécutif et compilation vers template PowerPoint.',
-      flow: [
-        { step: 'Contexte Territorial', detail: 'Sélection des paramètres territoriaux et données en cache' },
-        { step: 'Génération Scénario', detail: 'Appel Gemini pour structurer les opportunités et axes prioritaires' },
-        { step: 'Télémétrie FinOps', detail: 'Transmission transparente des tokens consommés au service GeminiUsageMonitor' },
-        { step: 'Export PowerPoint', detail: 'Création à chaud du fichier .pptx prêt pour la présentation client' }
-      ]
-    },
-    whatIBuilt: [
-      'Générateur automatisé de présentations PowerPoint aux standards graphiques d\'entreprise',
-      'Client léger de télémétrie vers GeminiUsageMonitor avec comportement failure-safe',
-      'Interface de cadrage visuel intégrant les visuels et logos officiels'
-    ],
-    whatILearned: [
-      'La génération de livrables bureautiques (PowerPoint, Word) est souvent plus valorisée par les décideurs d\'entreprise qu\'une simple API JSON brute.',
-      'L\'intégration native d\'une télémétrie de coût permet de rassurer les directions sur le budget d\'exploitation récurrent.'
-    ],
-    decisions: [
-      {
-        decision: 'Génération PowerPoint native via python-pptx',
-        rationale: 'Permet au consultant de retoucher manuellement les diapositives après génération, plutôt qu\'un PDF figé non modifiable.',
-        alternativeConsidered: 'Export en PDF non éditable.'
-      }
-    ],
-    testing: {
-      frameworks: ['Pytest'],
-      description: 'Tests de validité de la structure des fichiers PPTX générés et non-régression de l\'intégration de télémétrie.',
-      sampleCommand: 'pytest tests/ -v'
-    },
-    security: {
-      highlights: [
-        'Aucune transmission de clés API Google au moniteur de consommation',
-        'Données de proposition et de contexte territorial isolées en cache local'
-      ],
-      dataPrivacy: 'Utilisation de contextes de cadrage sans données industrielles sensibles.'
-    },
-    demoType: 'CASE STUDY ONLY',
-    hasLiveDemo: false,
-    liveDemoLabel: 'Case Study Only',
-    repoVisibility: 'Proprietary Pilot',
-    repoUrl: 'https://github.com/cdurand42/Zcube-Enedis-Pilot',
-    assets: [
-      {
-        type: 'image',
-        url: './assets/enedis/enedis-blueGreen.svg',
-        caption: 'Zcube Enedis Pilot — Scénarios et cadrages territoriaux',
         isCover: true
       }
     ]

@@ -74,7 +74,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onSelectProject, onOpenImage
           {/* Quick Metrics / Signals */}
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-4 max-w-3xl mx-auto font-mono text-xs">
             <div className="p-3 rounded-xl bg-slate-900/80 border border-slate-800/80">
-              <div className="text-xl font-bold text-sky-400">7</div>
+              <div className="text-xl font-bold text-sky-400">{PROJECTS.length}</div>
               <div className="text-[11px] text-slate-400 mt-0.5">Produits &amp; Pilotes</div>
             </div>
             <div className="p-3 rounded-xl bg-slate-900/80 border border-slate-800/80">

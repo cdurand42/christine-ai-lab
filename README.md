@@ -20,17 +20,21 @@ Démontrer auprès d'interlocuteurs et directeurs techniques une capacité épro
 
 ## 2. Projets Réels Documentés & Démontrés
 
-Le portfolio Christine AI Lab est déployé publiquement sur GitHub Pages. Les 7 projets d'ingénierie présentés sont classés selon leur modalité d'évaluation :
-- **Interactive Portfolio Demo** : démonstrateur interactif intégré exécutable dans le navigateur.
-- **Case Study** : étude de cas technique approfondie (architecture, décisions, tests et sécurité).
+Le portfolio Christine AI Lab est déployé publiquement sur GitHub Pages. Les 5 projets d'ingénierie présentés distinguent formellement les applications déployées en ligne des démonstrateurs interactifs de simulation :
 
-1. **WorkForce Optimize AI** — Cartographie organisationnelle ETI, audit de tâches et arbitrage Humain / Copilot / Agent (Cas Novalis Industries, 2 400 salariés).
-2. **Éditions Larivière AI Studio** — Studio de génération publicitaire multiformat avec charte de marque déterministe et sas de chargement mémoire sécurisé (`Lariviere-Live`).
-3. **DataLab Enedis** — Moteur analytique territorial sur l'Open Data Enedis (DuckDB & Parquet en mémoire).
-4. **ECS Signal-to-Deal** — Veille d'appels d'offres publics audiovisuels & IT, scoring et preuve formelle de titulaire sortant (Pilote Zcube × Evernex Capital Solutions).
-5. **GeminiUsageMonitor & Dashboard** — Microservice FinOps zero-knowledge calculant au millième de centime le coût des tokens Gemini en temps réel.
-6. **Jarvis** — Assistant local vocal Windows et mobile avec bac à sable d'actions et confirmation humaine obligatoire.
-7. **Zcube Enedis Pilot** — Cadrage de scénarios territoriaux par IA et génération automatisée de supports PowerPoint.
+### Applications Live Déployées (Streamlit)
+1. **WorkForce Optimize AI** — Cartographie organisationnelle ETI, audit de tâches et arbitrage Humain / Copilot / Agent (Cas Novalis Industries, 2 400 salariés).  
+   *Maturité : PILOT · Accès : LIVE APP · [workforce-ai.streamlit.app](https://workforce-ai.streamlit.app/)*
+2. **Éditions Larivière AI Studio** — Studio de génération publicitaire multiformat avec charte de marque déterministe et sas de chargement mémoire sécurisé (`Lariviere-Live`).  
+   *Maturité : PILOT · Accès : PROTECTED LIVE · [lariviere-ai.streamlit.app](https://lariviere-ai.streamlit.app/)*
+3. **DataLab Enedis** — Moteur analytique territorial sur l'Open Data Enedis (DuckDB & Parquet en mémoire).  
+   *Maturité : PILOT · Accès : PROTECTED LIVE · [datalab-enedis.streamlit.app](https://datalab-enedis.streamlit.app/)*
+
+### Démonstrateurs Interactifs Intégrés (Déploiement live planifié)
+4. **ECS Signal-to-Deal** — Veille d'appels d'offres publics audiovisuels & IT, scoring et preuve formelle de titulaire sortant (Pilote Zcube × Evernex Capital Solutions).  
+   *Maturité : PILOT · Accès : INTERACTIVE DEMO ONLY (simulateur d'avis BOAMP)*
+5. **GeminiUsageMonitor & Dashboard** — Microservice FinOps zero-knowledge calculant au millième de centime le coût des tokens Gemini en temps réel.  
+   *Maturité : PILOT · Accès : INTERACTIVE DEMO ONLY (simulateur de télémétrie FinOps)*
 
 Consultez l'audit complet dans [`docs/PROJECT_INVENTORY.md`](docs/PROJECT_INVENTORY.md).
 
@@ -112,8 +116,7 @@ Christine-AI-Lab/
 │       ├── favicon.svg          # Favicon officiel du Lab
 │       ├── workforce/           # Vraies captures WorkForce AI (Novalis)
 │       ├── lariviere/           # Vrais formats publicitaires et logos
-│       ├── enedis/              # Logos et charte Open Data
-│       └── jarvis/              # Icônes de l'assistant local
+│       └── enedis/              # Logos et charte Open Data
 ├── src/
 │   ├── components/
 │   │   ├── demos/               # Démonstrateurs interactifs intégrés
@@ -128,7 +131,7 @@ Christine-AI-Lab/
 │   ├── context/
 │   │   └── ViewModeContext.tsx  # Contexte Product vs Engineering
 │   ├── data/
-│   │   ├── projects.ts          # Données factuelles des 7 projets
+│   │   ├── projects.ts          # Données factuelles des 5 projets
 │   │   ├── skills.ts            # Domaines de compétences techniques
 │   │   └── taxonomy.ts          # Catégories de classification
 │   ├── pages/

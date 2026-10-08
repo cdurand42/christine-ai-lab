@@ -1,20 +1,25 @@
 # Christine AI Lab — Inventaire & Audit Technique des Projets
 
-Ce document recense l'ensemble des dépôts et projets réels identifiés sur l'environnement de travail de Christine, leur positionnement, leur niveau de maturité, leur stack technique et leur posture de sécurité.
+Ce document recense l'ensemble des dépôts et projets réels identifiés sur l'environnement de travail de Christine, leur positionnement, leur niveau de maturité, leur mode d'accès vérifié, leur stack technique et leur posture de sécurité.
 
 ---
 
-## 1. Projets Phares Intégrés au Portfolio
+## 1. Projets Phares du Book (5 Projets)
 
-| Projet | Dépôt Local | Statut Audité | Classification Démo | Stack Clé | Visibilité GitHub |
-|---|---|---|---|---|---|
-| **WorkForce Optimize AI** | `D:\WorkForceAI` | `PILOT` | **B. INTERACTIVE PORTFOLIO DEMO** | Python 3.12, Streamlit, Pydantic v2, Ruff, Pytest, Playwright | `Private Enterprise` |
-| **Éditions Larivière AI Studio** | `D:\LariviereAI` & `D:\Lariviere-Live` | `PILOT` | **B. INTERACTIVE PORTFOLIO DEMO** | Python, Streamlit, Gemini Vision, Pillow (Lanczos), PBKDF2 | `Public Gateway` (`Lariviere-Live`) + `Private Core` |
-| **DataLab Enedis** | `D:\DataLab-Enedis` & `D:\DataLab-Live` | `PILOT` | **B. INTERACTIVE PORTFOLIO DEMO** | Python 3.12, DuckDB, Apache Parquet, Streamlit, FastAPI | `Public Gateway` (`DataLab-Live`) + `Private Core` |
-| **ECS Signal-to-Deal** | `D:\ECS-Signal-to-Deal` | `PILOT` | **B. INTERACTIVE PORTFOLIO DEMO** | Python 3.12, Streamlit, Playwright, Pytest, Loop Policy Windows | `Proprietary Pilot` (Privé) |
-| **GeminiUsageMonitor & Dashboard** | `D:\GeminiUsageMonitor` & `D:\GeminiUsageDashboard` | `PILOT` | **B. INTERACTIVE PORTFOLIO DEMO** | FastAPI, SQLAlchemy 2.0, Alembic, Streamlit, Python Decimal | `Public Gateway` (`GeminiUsageDashboard`) + `Private Backend` |
-| **Jarvis — Assistant Local** | `D:\Jarvis` | `PROTOTYPE` | **B. INTERACTIVE PORTFOLIO DEMO** | Python 3.10+, Gemini 2.5 Flash, FastAPI, WebSockets, SQLite, PWA | `Proprietary Prototype` (Privé) |
-| **Zcube Enedis Pilot** | `D:\Zcube-Enedis-Pilot` | `PILOT` | **C. CASE STUDY ONLY** | Python, Streamlit, Gemini, python-pptx, Usage Monitor Client | `Proprietary Pilot` (Privé) |
+### A. REAL / PROTECTED LIVE APPS (Streamlit déployé & vérifié)
+
+| Projet | Dépôt Local | Statut Audité | Mode d'Accès Vérifié | URL Live Déployée | Stack Clé | Visibilité GitHub |
+|---|---|---|---|---|---|---|
+| **WorkForce Optimize AI** | `D:\WorkForceAI` | `PILOT` | **LIVE APP** | [workforce-ai.streamlit.app](https://workforce-ai.streamlit.app/) | Python 3.12, Streamlit, Pydantic v2, Ruff, Pytest, Playwright | `Private Enterprise` |
+| **Éditions Larivière AI Studio** | `D:\LariviereAI` & `D:\Lariviere-Live` | `PILOT` | **PROTECTED LIVE** | [lariviere-ai.streamlit.app](https://lariviere-ai.streamlit.app/) | Python, Streamlit, Gemini Vision, Pillow (Lanczos), PBKDF2 | `Public Gateway` (`Lariviere-Live`) + `Private Core` |
+| **DataLab Enedis** | `D:\DataLab-Enedis` & `D:\DataLab-Live` | `PILOT` | **PROTECTED LIVE** | [datalab-enedis.streamlit.app](https://datalab-enedis.streamlit.app/) | Python 3.12, DuckDB, Apache Parquet, Streamlit, FastAPI | `Public Gateway` (`DataLab-Live`) + `Private Core` |
+
+### B. INTERACTIVE DEMO ONLY (Déploiement live planifié ultérieurement)
+
+| Projet | Dépôt Local | Statut Audité | Mode d'Accès | Démonstrateur | Stack Clé | Visibilité GitHub |
+|---|---|---|---|---|---|---|
+| **ECS Signal-to-Deal** | `D:\ECS-Signal-to-Deal` | `PILOT` | **INTERACTIVE DEMO** | Simulateur d'avis BOAMP / Titulaire | Python 3.12, Streamlit, Playwright, Pytest, Loop Policy Windows | `Proprietary Pilot` (Privé) |
+| **GeminiUsageMonitor & Dashboard** | `D:\GeminiUsageMonitor` & `D:\GeminiUsageDashboard` | `PILOT` | **INTERACTIVE DEMO** | Simulateur FinOps tokens / Coûts | FastAPI, SQLAlchemy 2.0, Alembic, Streamlit, Python Decimal | `Public Gateway` (`GeminiUsageDashboard`) + `Private Backend` |
 
 ---
 
@@ -28,31 +33,26 @@ Ce document recense l'ensemble des dépôts et projets réels identifiés sur l'
 1. **WorkForceAI (`D:\WorkForceAI`)**
    - **Secrets** : Aucun secret hardcodé requis. Démonstration exécutable hors-ligne en mode local déterministe.
    - **Données** : Modélisation canonique sur une ETI industrielle fictive (`Novalis Industries`, ~2 400 salariés).
-   - **Décision** : Maintenu en dépôt privé. Démonstration assurée via captures d'écran réelles et simulateur de matrice de tâches intégré au lab.
+   - **Décision** : Maintenu en dépôt privé. Application live accessible sur `https://workforce-ai.streamlit.app/` et démonstrateur interactif WorkScan intégré au lab.
 
 2. **Éditions Larivière AI (`D:\LariviereAI` & `D:\Lariviere-Live`)**
    - **Secrets** : Aucun secret dans le dépôt public `Lariviere-Live`.
-   - **Architecture Sas** : Le portail public Streamlit demande un identifiant/mot de passe haché par PBKDF2-HMAC-SHA256 (600 000 itérations). Le code privé n'est chargé en mémoire conteneur qu'après authentification via l'API GitHub avec en-tête Authorization HTTPS.
-   - **Décision** : Le dépôt public `Lariviere-Live` sert de passerelle d'exécution avec sas d'accès sur Streamlit Community Cloud.
+   - **Architecture Sas** : Le portail public Streamlit protège l'accès par contrôle PBKDF2-HMAC-SHA256 (600 000 itérations). Le code privé n'est chargé en mémoire conteneur qu'après authentification via l'API GitHub avec en-tête Authorization HTTPS.
+   - **Décision** : Le dépôt public `Lariviere-Live` sert de passerelle d'exécution avec sas d'accès sur `https://lariviere-ai.streamlit.app/`.
 
 3. **DataLab Enedis (`D:\DataLab-Enedis` & `D:\DataLab-Live`)**
    - **Secrets** : Aucun secret exposé. Le frontend public `DataLab-Live` communique côté serveur avec le backend privé via `X-DataLab-Token`.
    - **Données** : Données issues exclusivement de l'Open Data public Enedis (consommations annuelles par commune et secteur).
-   - **Décision** : Dépôt public `DataLab-Live` pour le frontal léger ; moteur analytique DuckDB/Parquet privé.
+   - **Décision** : Dépôt public `DataLab-Live` pour le frontal avec portail d'accès sur `https://datalab-enedis.streamlit.app/` ; moteur analytique DuckDB/Parquet privé.
 
 4. **ECS Signal-to-Deal (`D:\ECS-Signal-to-Deal`)**
    - **Secrets** : Aucun accès aux systèmes CRM ou bases internes Evernex.
    - **Données** : Avis d'appels d'offres publics légaux (BOAMP, TED, APProch).
-   - **Décision** : Dépôt conservé privé. Reproduction de la démo via le runbook officiel de 7 minutes et simulateur d'avis public dans le lab.
+   - **Décision** : Dépôt conservé privé. Démonstrateur interactif intégré dans Christine AI Lab ; déploiement live planifié ultérieurement.
 
 5. **GeminiUsageMonitor (`D:\GeminiUsageMonitor` & `D:\GeminiUsageDashboard`)**
    - **Secrets** : Architecture Zero-Knowledge. Le microservice n'accepte aucune clé API Google Gemini ; il ingère uniquement les métadonnées de consommation (compteurs de tokens, type de modèle).
-   - **Décision** : Frontal public `GeminiUsageDashboard` déployable sur Streamlit Cloud avec mot de passe temps constant.
-
-6. **Jarvis (`D:\Jarvis`)**
-   - **Secrets** : Configuration `.env` locale exclue de Git.
-   - **Réseau** : Écoute exclusive sur loopback (127.0.0.1) et tunnel chiffré privé Tailscale Serve sans exposition Internet.
-   - **Décision** : Dépôt privé.
+   - **Décision** : Démonstrateur FinOps interactif intégré dans Christine AI Lab ; déploiement live planifié ultérieurement.
 
 ---
 

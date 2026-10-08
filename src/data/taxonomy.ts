@@ -37,10 +37,5 @@ export const CATEGORIES: CategoryInfo[] = [
     id: 'Developer Tools & FinOps',
     label: 'FinOps & DevTools',
     description: 'Télémétrie en temps réel des coûts de tokens IA et architecture zero-knowledge.'
-  },
-  {
-    id: 'Agentic AI & Edge Systems',
-    label: 'Edge & Local Agents',
-    description: 'Assistants locaux Windows et mobiles avec sandbox de commandes et isolation de profil.'
   }
 ];
