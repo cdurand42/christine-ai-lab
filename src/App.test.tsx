@@ -58,16 +58,22 @@ describe('Christine AI Lab Data Integrity', () => {
     }
   });
 
-  it('should distinguish real live apps from interactive demos', () => {
+  it('should have all 5 projects connected to verified live Streamlit apps and interactive demos', () => {
     const liveApps = PROJECTS.filter(p => p.liveDemoUrl);
-    expect(liveApps.length).toBe(3);
-    expect(liveApps.map(p => p.id)).toEqual(['workforce-ai', 'lariviere-ai', 'datalab-enedis']);
+    expect(liveApps.length).toBe(5);
+    expect(liveApps.map(p => p.id)).toEqual([
+      'workforce-ai',
+      'lariviere-ai',
+      'datalab-enedis',
+      'ecs-signal-to-deal',
+      'gemini-usage-monitor'
+    ]);
 
-    const interactiveOnly = PROJECTS.filter(p => !p.liveDemoUrl);
-    expect(interactiveOnly.length).toBe(2);
-    expect(interactiveOnly.map(p => p.id)).toEqual(['ecs-signal-to-deal', 'gemini-usage-monitor']);
-    for (const p of interactiveOnly) {
-      expect(p.access).toBe('INTERACTIVE DEMO');
+    for (const p of PROJECTS) {
+      expect(p.hasLiveDemo).toBe(true);
+      expect(p.liveDemoUrl).toMatch(/^https:\/\/[a-z0-9-]+\.streamlit\.app\/$/);
+      expect(p.interactiveDemoId).toBeDefined();
+      expect(['LIVE APP', 'PROTECTED LIVE']).toContain(p.access);
     }
   });
 });

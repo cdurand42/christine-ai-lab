@@ -20,21 +20,18 @@ Démontrer auprès d'interlocuteurs et directeurs techniques une capacité épro
 
 ## 2. Projets Réels Documentés & Démontrés
 
-Le portfolio Christine AI Lab est déployé publiquement sur GitHub Pages. Les 5 projets d'ingénierie présentés distinguent formellement les applications déployées en ligne des démonstrateurs interactifs de simulation :
+Le portfolio Christine AI Lab est déployé publiquement sur GitHub Pages. Les 5 projets d'ingénierie présentés disposent tous d'une application réelle accessible en ligne (Streamlit) complétée par un démonstrateur interactif intégré dans le lab :
 
-### Applications Live Déployées (Streamlit)
 1. **WorkForce Optimize AI** — Cartographie organisationnelle ETI, audit de tâches et arbitrage Humain / Copilot / Agent (Cas Novalis Industries, 2 400 salariés).  
    *Maturité : PILOT · Accès : LIVE APP · [workforce-ai.streamlit.app](https://workforce-ai.streamlit.app/)*
 2. **Éditions Larivière AI Studio** — Studio de génération publicitaire multiformat avec charte de marque déterministe et sas de chargement mémoire sécurisé (`Lariviere-Live`).  
    *Maturité : PILOT · Accès : PROTECTED LIVE · [lariviere-ai.streamlit.app](https://lariviere-ai.streamlit.app/)*
 3. **DataLab Enedis** — Moteur analytique territorial sur l'Open Data Enedis (DuckDB & Parquet en mémoire).  
    *Maturité : PILOT · Accès : PROTECTED LIVE · [datalab-enedis.streamlit.app](https://datalab-enedis.streamlit.app/)*
-
-### Démonstrateurs Interactifs Intégrés (Déploiement live planifié)
 4. **ECS Signal-to-Deal** — Veille d'appels d'offres publics audiovisuels & IT, scoring et preuve formelle de titulaire sortant (Pilote Zcube × Evernex Capital Solutions).  
-   *Maturité : PILOT · Accès : INTERACTIVE DEMO ONLY (simulateur d'avis BOAMP)*
-5. **GeminiUsageMonitor & Dashboard** — Microservice FinOps zero-knowledge calculant au millième de centime le coût des tokens Gemini en temps réel.  
-   *Maturité : PILOT · Accès : INTERACTIVE DEMO ONLY (simulateur de télémétrie FinOps)*
+   *Maturité : PILOT · Accès : LIVE APP · [ecs-ai.streamlit.app](https://ecs-ai.streamlit.app/)*
+5. **GeminiUsageMonitor & Dashboard** — Microservice FinOps zero-knowledge & tableau de bord de télémétrie de tokens en temps réel.  
+   *Maturité : PILOT · Accès : LIVE APP · [token-ai.streamlit.app](https://token-ai.streamlit.app/)*
 
 Consultez l'audit complet dans [`docs/PROJECT_INVENTORY.md`](docs/PROJECT_INVENTORY.md).
 

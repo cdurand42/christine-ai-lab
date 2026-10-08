@@ -6,20 +6,15 @@ Ce document recense l'ensemble des dépôts et projets réels identifiés sur l'
 
 ## 1. Projets Phares du Book (5 Projets)
 
-### A. REAL / PROTECTED LIVE APPS (Streamlit déployé & vérifié)
+### REAL / PROTECTED LIVE APPS (Streamlit déployé & vérifié)
 
 | Projet | Dépôt Local | Statut Audité | Mode d'Accès Vérifié | URL Live Déployée | Stack Clé | Visibilité GitHub |
 |---|---|---|---|---|---|---|
 | **WorkForce Optimize AI** | `D:\WorkForceAI` | `PILOT` | **LIVE APP** | [workforce-ai.streamlit.app](https://workforce-ai.streamlit.app/) | Python 3.12, Streamlit, Pydantic v2, Ruff, Pytest, Playwright | `Private Enterprise` |
 | **Éditions Larivière AI Studio** | `D:\LariviereAI` & `D:\Lariviere-Live` | `PILOT` | **PROTECTED LIVE** | [lariviere-ai.streamlit.app](https://lariviere-ai.streamlit.app/) | Python, Streamlit, Gemini Vision, Pillow (Lanczos), PBKDF2 | `Public Gateway` (`Lariviere-Live`) + `Private Core` |
 | **DataLab Enedis** | `D:\DataLab-Enedis` & `D:\DataLab-Live` | `PILOT` | **PROTECTED LIVE** | [datalab-enedis.streamlit.app](https://datalab-enedis.streamlit.app/) | Python 3.12, DuckDB, Apache Parquet, Streamlit, FastAPI | `Public Gateway` (`DataLab-Live`) + `Private Core` |
-
-### B. INTERACTIVE DEMO ONLY (Déploiement live planifié ultérieurement)
-
-| Projet | Dépôt Local | Statut Audité | Mode d'Accès | Démonstrateur | Stack Clé | Visibilité GitHub |
-|---|---|---|---|---|---|---|
-| **ECS Signal-to-Deal** | `D:\ECS-Signal-to-Deal` | `PILOT` | **INTERACTIVE DEMO** | Simulateur d'avis BOAMP / Titulaire | Python 3.12, Streamlit, Playwright, Pytest, Loop Policy Windows | `Proprietary Pilot` (Privé) |
-| **GeminiUsageMonitor & Dashboard** | `D:\GeminiUsageMonitor` & `D:\GeminiUsageDashboard` | `PILOT` | **INTERACTIVE DEMO** | Simulateur FinOps tokens / Coûts | FastAPI, SQLAlchemy 2.0, Alembic, Streamlit, Python Decimal | `Public Gateway` (`GeminiUsageDashboard`) + `Private Backend` |
+| **ECS Signal-to-Deal** | `D:\ECS-Signal-to-Deal` | `PILOT` | **LIVE APP** | [ecs-ai.streamlit.app](https://ecs-ai.streamlit.app/) | Python 3.12, Streamlit, Playwright, Pytest, Loop Policy Windows | `Proprietary Pilot` (Privé) |
+| **GeminiUsageMonitor & Dashboard** | `D:\GeminiUsageMonitor` & `D:\GeminiUsageDashboard` | `PILOT` | **LIVE APP** | [token-ai.streamlit.app](https://token-ai.streamlit.app/) | FastAPI, SQLAlchemy 2.0, Alembic, Streamlit, Python Decimal | `Public Gateway` (`GeminiUsageDashboard`) + `Private Backend` |
 
 ---
 
@@ -48,11 +43,11 @@ Ce document recense l'ensemble des dépôts et projets réels identifiés sur l'
 4. **ECS Signal-to-Deal (`D:\ECS-Signal-to-Deal`)**
    - **Secrets** : Aucun accès aux systèmes CRM ou bases internes Evernex.
    - **Données** : Avis d'appels d'offres publics légaux (BOAMP, TED, APProch).
-   - **Décision** : Dépôt conservé privé. Démonstrateur interactif intégré dans Christine AI Lab ; déploiement live planifié ultérieurement.
+   - **Décision** : Dépôt conservé privé. Application live déployée sur `https://ecs-ai.streamlit.app/` et démonstrateur interactif intégré dans le portfolio.
 
 5. **GeminiUsageMonitor (`D:\GeminiUsageMonitor` & `D:\GeminiUsageDashboard`)**
    - **Secrets** : Architecture Zero-Knowledge. Le microservice n'accepte aucune clé API Google Gemini ; il ingère uniquement les métadonnées de consommation (compteurs de tokens, type de modèle).
-   - **Décision** : Démonstrateur FinOps interactif intégré dans Christine AI Lab ; déploiement live planifié ultérieurement.
+   - **Décision** : Application live déployée sur `https://token-ai.streamlit.app/` et démonstrateur FinOps interactif intégré dans le portfolio.
 
 ---
 

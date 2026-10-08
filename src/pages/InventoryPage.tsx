@@ -50,7 +50,7 @@ export const InventoryPage: React.FC = () => {
       status: 'PILOT' as const,
       category: 'Agentic Intelligence & Public Tenders',
       visibility: 'Proprietary Pilot (Private)',
-      hasLiveDemo: false,
+      hasLiveDemo: true,
       securityNotes: 'Données BOAMP/TED publiques. Aucun contact inventé, aucun accès CRM Evernex. Dépôt conservé privé.'
     },
     {
@@ -62,7 +62,7 @@ export const InventoryPage: React.FC = () => {
       status: 'PILOT' as const,
       category: 'Developer Tools & FinOps',
       visibility: 'Public Gateway + Private Service',
-      hasLiveDemo: false,
+      hasLiveDemo: true,
       securityNotes: 'Architecture Zero-Knowledge : ne reçoit pas la clé API Google. Ingestion de compteurs de tokens uniquement. Protection mot de passe hmac constant.'
     }
   ];
